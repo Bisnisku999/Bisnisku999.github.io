@@ -23,6 +23,18 @@
     <p>12 Oktober 2025<br>Gedung Melati, Surabaya</p>
 
     <img src="undangan.jpg" alt="Desain Undangan" />
+    <!-- Hitungan Mundur ke Acara -->
+<div class="countdown-box">
+  <h3>Menuju Hari Bahagia:</h3>
+  <div id="countdown"></div>
+</div>
+
+<!-- Tanggal Acara -->
+<div class="tanggal-box">
+  <h3>🗓️ Tanggal Acara</h3>
+  <p>Sabtu, 12 Oktober 2025<br>Pukul 10.00 WIB</p>
+</div>
+
 
     <h3>Lokasi Acara:</h3>
     <!-- Google Maps Embed -->
@@ -85,6 +97,34 @@
   // Fokus hanya pada sentuhan atau klik cepat
   document.addEventListener("touchstart", mulaiMusik, { once: true });
   document.addEventListener("click", mulaiMusik, { once: true });
+</script>
+<script>
+  // Set tanggal acara
+  const targetDate = new Date("2025-10-12T10:00:00").getTime();
+
+  const countdown = document.getElementById("countdown");
+
+  const updateCountdown = setInterval(function () {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    if (distance < 0) {
+      clearInterval(updateCountdown);
+      countdown.innerHTML = "<strong>Acara Sedang Berlangsung 🎉</strong>";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    countdown.innerHTML =
+      `<div><strong>${days}</strong> Hari</div>` +
+      `<div><strong>${hours}</strong> Jam</div>` +
+      `<div><strong>${minutes}</strong> Menit</div>` +
+      `<div><strong>${seconds}</strong> Detik</div>`;
+  }, 1000);
 </script>
 
 </body>
