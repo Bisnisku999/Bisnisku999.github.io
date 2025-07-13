@@ -1,175 +1,167 @@
-body {
-  font-family: 'Segoe UI', sans-serif;
+/* Reset dan Font */
+* {
   margin: 0;
   padding: 0;
-  background: #fff8f8;
-  color: #3c2c2c;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #fff9f9;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+/* Bagian Cover */
+#cover {
+  height: 100vh;
+  background: url('https://i.ibb.co/YQ3qTkS/bg-bunga.jpg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-shadow: 0 1px 3px #000;
+  padding: 20px;
   text-align: center;
 }
 
-.container {
-  padding: 20px;
+#cover h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+#cover h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#cover button {
+  background: #e67e7e;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#cover button:hover {
+  background: #cc5e5e;
+}
+
+/* Bagian Undangan */
+section, footer {
+  padding: 40px 20px;
+  text-align: center;
 }
 
 h1, h2, h3 {
-  color: #5a3c2e;
+  color: #552b2b;
+  margin-bottom: 15px;
 }
 
-.undangan-img {
-  width: 90%;
-  max-width: 400px;
-  border-radius: 10px;
-  margin-top: 1rem;
+p {
+  margin-bottom: 10px;
+  line-height: 1.6;
 }
 
-.maps iframe {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  margin-top: 1rem;
-}
-
-.section {
-  margin-top: 2rem;
-}
-
-/* Opening */
-#opening {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: linear-gradient(to bottom, #fff9f9, #ffeaea);
-  z-index: 9999;
+/* Countdown Box */
+.countdown {
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.countdown div {
+  background: #fdeeee;
+  padding: 15px;
+  width: 80px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  font-weight: bold;
 }
 
-.opening-content h1 {
-  font-size: 2.8rem;
-  margin-top: 1rem;
-  color: #8B5E3C;
-}
-
-.opening-content h3 {
-  font-size: 1.4rem;
-  color: #7a5c43;
-}
-
-.opening-content button {
-  margin-top: 2rem;
-  padding: 10px 20px;
-  font-size: 1rem;
+/* Google Maps */
+iframe {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
   border: none;
-  border-radius: 8px;
-  background-color: #ff8fa3;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* Animasi Burung */
-.birds {
-  position: absolute;
-  top: -60px;
-  left: 0;
-  width: 100%;
-  height: 150px;
-  background: url('https://i.ibb.co/ZX1rTzh/birds-flying.png') repeat-x;
-  background-size: contain;
-  animation: flyBirds 20s linear infinite;
-  opacity: 0.3;
-}
-
-@keyframes flyBirds {
-  0% { background-position: 0 0; }
-  100% { background-position: 1000px 0; }
-}
-
-/* Countdown */
-#countdown {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 1rem;
-}
-
-#countdown div {
-  background: #ffeef0;
-  color: #5c4033;
-  padding: 0.7rem 1rem;
-  border-radius: 10px;
-  min-width: 70px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 1rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-#countdown div span {
-  display: block;
-  font-size: 0.8rem;
-  font-weight: normal;
-  margin-top: 4px;
+  margin-top: 10px;
 }
 
 /* Galeri */
-.gallery {
+.galeri-box {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;
   flex-wrap: wrap;
-  margin-top: 1rem;
+  margin-top: 20px;
 }
-.gallery img {
+.galeri-box img {
   width: 100px;
   height: 100px;
-  object-fit: cover;
   border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  object-fit: cover;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.galeri-box img:hover {
+  transform: scale(1.05);
 }
 
-/* Form */
-form input, form textarea, form select {
-  padding: 8px;
-  margin: 5px;
-  width: 90%;
-  max-width: 400px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-form button {
-  padding: 10px 20px;
-  background-color: #ff8fa3;
-  border: none;
-  border-radius: 6px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-}
+/* Form Ucapan */
 .ucapan-box {
-  background: #fff5f5;
-  border-left: 4px solid #ff8fa3;
-  padding: 10px;
-  margin: 10px auto;
+  background: #fff;
   max-width: 400px;
+  margin: 0 auto;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ucapan-box input,
+.ucapan-box textarea,
+.ucapan-box select,
+.ucapan-box button {
+  padding: 10px;
   border-radius: 6px;
-  text-align: left;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
 }
 
-/* Daun Gugur */
-.daun {
+.ucapan-box textarea {
+  resize: none;
+  height: 100px;
+}
+
+.ucapan-box button {
+  background: #e67e7e;
+  color: white;
+  border: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.ucapan-box button:hover {
+  background: #c84e4e;
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Efek Daun (canvas) */
+canvas {
   position: fixed;
-  width: 25px;
-  height: 25px;
-  background: url('https://i.ibb.co/khBrVw5/leaf.png') no-repeat;
-  background-size: contain;
-  animation: daunGugur 10s linear infinite;
-  z-index: 0;
-}
-
-@keyframes daunGugur {
-  0% { transform: translateY(-50px) rotate(0deg); }
-  100% { transform: translateY(110vh) rotate(360deg); }
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 999;
 }
