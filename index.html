@@ -50,5 +50,32 @@
     document.addEventListener("touchstart", mulaiMusik);
     document.addEventListener("scroll", mulaiMusik);
   </script>
+  <!-- Musik -->
+<audio id="musik" loop>
+  <source src="lagu.mp3" type="audio/mpeg" />
+  Browser Anda tidak mendukung audio.
+</audio>
+
+<!-- Script Pemutar Musik -->
+<script>
+  function mulaiMusik() {
+    const musik = document.getElementById("musik");
+    musik.play().then(() => {
+      console.log("Musik diputar");
+    }).catch((e) => {
+      console.log("Autoplay gagal:", e);
+    });
+
+    // Hapus event listener setelah berhasil
+    document.removeEventListener("touchstart", mulaiMusik);
+    document.removeEventListener("scroll", mulaiMusik);
+    document.removeEventListener("click", mulaiMusik);
+  }
+
+  // Dengarkan semua jenis interaksi awal
+  document.addEventListener("touchstart", mulaiMusik);
+  document.addEventListener("scroll", mulaiMusik);
+  document.addEventListener("click", mulaiMusik);
+</script>
 </body>
 </html>
