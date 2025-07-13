@@ -166,4 +166,22 @@ img {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+/* Animasi Burung di Halaman Opening */
+.birds {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: url('https://i.ibb.co/ZX1rTzh/birds-flying.png') repeat-x;
+  background-size: contain;
+  animation: flyBirds 20s linear infinite;
+  opacity: 0.3;
+}
+
+/* Animasi terbang ke kanan */
+@keyframes flyBirds {
+  0% { background-position: 0 0; }
+  100% { background-position: 1000px 0; }
+}
 
