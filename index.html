@@ -135,7 +135,14 @@
     `;
   }, 1000);
 </script>
+<script>
+  function bukaUndangan() {
+    // Sembunyikan halaman opening
+    document.getElementById('opening').style.display = 'none';
 
+    // Scroll ke konten utama
+    document.querySelector('.container').scrollIntoView({ behavior: 'smooth' });
+  }
 </script>
 
 </body>
