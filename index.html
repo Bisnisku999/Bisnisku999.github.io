@@ -7,6 +7,16 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Halaman Opening -->
+<div id="opening">
+  <div class="opening-content">
+    <div class="birds"></div>
+    <h3>The Wedding of</h3>
+    <h1>Bella & Deni</h1>
+    <button onclick="bukaUndangan()">Buka Undangan</button>
+  </div>
+</div>
+
 
   <!-- Musik -->
   <audio id="musik" loop>
@@ -141,6 +151,12 @@
     document.getElementById('opening').style.display = 'none';
 
     // Scroll ke konten utama
+    document.querySelector('.container').scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+<script>
+  function bukaUndangan() {
+    document.getElementById('opening').style.display = 'none';
     document.querySelector('.container').scrollIntoView({ behavior: 'smooth' });
   }
 </script>
