@@ -29,7 +29,11 @@ h1, h2, h3 {
   margin-top: 1rem;
 }
 
-/* Opening Screen */
+.section {
+  margin-top: 2rem;
+}
+
+/* Opening */
 #opening {
   position: fixed;
   top: 0; left: 0;
@@ -40,7 +44,6 @@ h1, h2, h3 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  text-align: center;
 }
 
 .opening-content h1 {
@@ -109,4 +112,64 @@ h1, h2, h3 {
   font-size: 0.8rem;
   font-weight: normal;
   margin-top: 4px;
+}
+
+/* Galeri */
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.gallery img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Form */
+form input, form textarea, form select {
+  padding: 8px;
+  margin: 5px;
+  width: 90%;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+form button {
+  padding: 10px 20px;
+  background-color: #ff8fa3;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.ucapan-box {
+  background: #fff5f5;
+  border-left: 4px solid #ff8fa3;
+  padding: 10px;
+  margin: 10px auto;
+  max-width: 400px;
+  border-radius: 6px;
+  text-align: left;
+}
+
+/* Daun Gugur */
+.daun {
+  position: fixed;
+  width: 25px;
+  height: 25px;
+  background: url('https://i.ibb.co/khBrVw5/leaf.png') no-repeat;
+  background-size: contain;
+  animation: daunGugur 10s linear infinite;
+  z-index: 0;
+}
+
+@keyframes daunGugur {
+  0% { transform: translateY(-50px) rotate(0deg); }
+  100% { transform: translateY(110vh) rotate(360deg); }
 }
