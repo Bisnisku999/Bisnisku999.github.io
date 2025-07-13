@@ -41,3 +41,34 @@ img {
 .maps {
   margin: 2rem 0;
 }
+.countdown-box {
+  background: #fff6f8;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin: 2rem auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+#countdown {
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+#countdown div {
+  background: #ffecec;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  min-width: 80px;
+}
+
+.tanggal-box {
+  background: #fdfdfd;
+  padding: 1.2rem;
+  border-radius: 12px;
+  margin: 2rem auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
