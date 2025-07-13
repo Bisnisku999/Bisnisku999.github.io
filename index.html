@@ -141,6 +141,30 @@
     <img src="galeri3.jpg" alt="Galeri 3">
   </div>
 </section>
+<section id="rekening">
+  <h2>🎁 Tanda Kasih</h2>
+  <p>Jika berhalangan hadir namun ingin berbagi kebahagiaan, berikut rekening yang dapat digunakan:</p>
+  
+  <div class="rekening-box">
+    <div>
+      <h3>🏦 BCA</h3>
+      <p>Nomor Rekening: <strong id="rekBCA">1234567890</strong></p>
+      <p>a.n. Bella Amelia</p>
+      <button onclick="salinRekening('rekBCA')">Salin Nomor</button>
+    </div>
+    <div>
+      <h3>🏦 Mandiri</h3>
+      <p>Nomor Rekening: <strong id="rekMandiri">9876543210</strong></p>
+      <p>a.n. Deni Pratama</p>
+      <button onclick="salinRekening('rekMandiri')">Salin Nomor</button>
+    </div>
+    <div>
+      <h3>🔗 QRIS (Dompet Digital)</h3>
+      <img src="qris.png" alt="QRIS" style="width:150px; margin:10px 0;">
+      <p><a href="https://link-qris-kamu.com" target="_blank">Klik di sini untuk bayar via QRIS</a></p>
+    </div>
+  </div>
+</section>
 
 <!-- UCAPAN -->
 <section>
@@ -221,5 +245,14 @@ function animate() {
 for (let i = 0; i < 50; i++) leaves.push(new Leaf());
 animate();
 </script>
+  <script>
+function salinRekening(id) {
+  const text = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    alert("Nomor rekening berhasil disalin: " + text);
+  });
+}
+</script>
+
 </body>
 </html>
