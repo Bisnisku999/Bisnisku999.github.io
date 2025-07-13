@@ -72,3 +72,29 @@ img {
   margin: 2rem auto;
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
+#countdown {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+#countdown div {
+  background: #fff0f3;
+  color: #5c4033;
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  min-width: 85px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+#countdown div span {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: normal;
+  margin-top: 4px;
+}
