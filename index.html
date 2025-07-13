@@ -3,145 +3,223 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Undangan Pernikahan Bella & Deni</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Undangan Bella & Deni</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background: #fff9f9; color: #333; scroll-behavior: smooth; }
+
+    header, section, footer { padding: 20px; text-align: center; }
+
+    #cover {
+      height: 100vh;
+      background: url('https://i.ibb.co/YQ3qTkS/bg-bunga.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-shadow: 0 1px 3px #000;
+    }
+
+    #cover h1 { font-size: 2em; }
+    #cover h2 { font-size: 1.5em; margin: 10px 0; }
+    #cover button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #e67e7e;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    #undangan h1 { font-size: 26px; margin-bottom: 10px; }
+
+    .countdown { display: flex; justify-content: center; gap: 10px; margin: 20px 0; }
+    .countdown div {
+      background: #fdeeee;
+      padding: 10px;
+      border-radius: 10px;
+      width: 60px;
+    }
+
+    iframe { border-radius: 10px; border: 0; }
+
+    .galeri-box {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 10px 0;
+    }
+
+    .galeri-box img {
+      width: 100px;
+      height: 100px;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+
+    .ucapan-box {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    .ucapan-box input, .ucapan-box textarea, .ucapan-box select, .ucapan-box button {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .ucapan-box button {
+      background: #e67e7e;
+      color: #fff;
+      border: none;
+    }
+
+    canvas { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 999; }
+  </style>
 </head>
 <body>
 
-  <!-- Opening -->
-  <div id="opening">
-    <div class="opening-content">
-      <div class="birds"></div>
-      <h3>The Wedding of</h3>
-      <h1>Bella & Deni</h1>
-      <button onclick="bukaUndangan()">Buka Undangan</button>
-    </div>
+<!-- COVER -->
+<section id="cover">
+  <h1>The Wedding of</h1>
+  <h2>Bella & Deni</h2>
+  <button onclick="document.getElementById('undangan').scrollIntoView({behavior:'smooth'})">Buka Undangan</button>
+</section>
+
+<!-- MUSIK -->
+<audio id="bgm" src="lagu.mp3" autoplay loop></audio>
+
+<!-- UNDANGAN -->
+<section id="undangan">
+  <h1>Undangan Pernikahan</h1>
+  <p>Dengan hormat kami mengundang Anda ke acara pernikahan:</p>
+  <h2>Bella & Deni</h2>
+</section>
+
+<!-- COUNTDOWN -->
+<section id="countdown">
+  <h2>Menuju Hari Bahagia:</h2>
+  <div class="countdown">
+    <div><span id="days">00</span><br>Hari</div>
+    <div><span id="hours">00</span><br>Jam</div>
+    <div><span id="minutes">00</span><br>Menit</div>
+    <div><span id="seconds">00</span><br>Detik</div>
   </div>
+</section>
 
-  <!-- Musik -->
-  <audio id="musik" loop>
-    <source src="lagu.mp3" type="audio/mpeg" />
-  </audio>
+<!-- TANGGAL -->
+<section>
+  <h3>📅 Tanggal Acara</h3>
+  <p>Sabtu, 12 Oktober 2025<br>Pukul 10.00 WIB</p>
+</section>
 
-  <!-- Isi Undangan -->
-  <div class="container" id="undangan">
-    <h1>Undangan Pernikahan</h1>
-    <p>Dengan hormat kami mengundang Anda ke acara pernikahan:</p>
-    <h2>Bella & Deni</h2>
+<!-- GOOGLE MAPS -->
+<section>
+  <h3>📍 Lokasi Acara</h3>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5385589823865!2d106.82951801476905!3d-6.175387995524883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e7db5fa7c5%3A0xc60f0f0219e5c64!2sMonas!5e0!3m2!1sen!2sid!4v1628240928193!5m2!1sen!2sid"
+    width="100%" height="300" allowfullscreen="" loading="lazy"></iframe>
+</section>
 
-    <!-- Countdown -->
-    <div class="countdown-box">
-      <h3>Menuju Hari Bahagia:</h3>
-      <div id="countdown"></div>
-    </div>
-
-    <!-- Tanggal -->
-    <div class="tanggal-box">
-      <h3>🗓️ Tanggal Acara</h3>
-      <p>Sabtu, 12 Oktober 2025<br>Pukul 10.00 WIB</p>
-    </div>
-
-    <!-- Gambar Undangan -->
-    <img src="undangan.jpg" alt="Undangan" class="undangan-img"/>
-
-    <!-- Lokasi Maps -->
-    <h3>📍 Lokasi Acara:</h3>
-    <div class="maps">
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1983.7031535584225!2d106.8271537!3d-6.1753945"
-        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
-      </iframe>
-    </div>
-
-    <!-- Galeri -->
-    <div class="section">
-      <h3>📸 Galeri Kami</h3>
-      <div class="gallery">
-        <img src="https://i.ibb.co/Gvgjv3x/wedding1.jpg" alt="Galeri 1">
-        <img src="https://i.ibb.co/FHRdzWX/wedding2.jpg" alt="Galeri 2">
-        <img src="https://i.ibb.co/Lnb3dLz/wedding3.jpg" alt="Galeri 3">
-      </div>
-    </div>
-
-    <!-- Form Ucapan -->
-    <div class="section">
-      <h3>📝 Kirim Ucapan</h3>
-      <form name="ucapan" onsubmit="return simpanUcapan(event)">
-        <input type="text" name="nama" placeholder="Nama Anda" required><br>
-        <textarea name="pesan" placeholder="Ucapan & Doa" required></textarea><br>
-        <select name="konfirmasi">
-          <option value="Hadir">Saya akan hadir</option>
-          <option value="Tidak Hadir">Maaf, tidak bisa hadir</option>
-        </select><br>
-        <button type="submit">Kirim</button>
-      </form>
-      <div id="daftarUcapan" class="ucapan-list"></div>
-    </div>
-
-    <!-- Penutup -->
-    <p>Terima kasih atas kehadiran dan doanya. ❤️</p>
+<!-- GALERI -->
+<section>
+  <h3>📸 Galeri Kami</h3>
+  <div class="galeri-box">
+    <img src="galeri1.jpg" alt="Galeri 1">
+    <img src="galeri2.jpg" alt="Galeri 2">
+    <img src="galeri3.jpg" alt="Galeri 3">
   </div>
+</section>
 
-  <!-- Script -->
-  <script>
-    function bukaUndangan() {
-      document.getElementById('opening').style.display = 'none';
-      document.getElementById('musik').play();
-      document.getElementById('undangan').scrollIntoView({ behavior: 'smooth' });
+<!-- UCAPAN -->
+<section>
+  <h3>📝 Kirim Ucapan</h3>
+  <div class="ucapan-box">
+    <input type="text" placeholder="Nama Anda">
+    <textarea placeholder="Ucapan & Doa"></textarea>
+    <select>
+      <option>Saya akan hadir</option>
+      <option>Maaf tidak bisa hadir</option>
+    </select>
+    <button>Kirim</button>
+  </div>
+</section>
+
+<!-- PENUTUP -->
+<footer>
+  <p>Terima kasih atas kehadiran dan doanya. ❤️</p>
+</footer>
+
+<!-- EFEK DAUN -->
+<canvas id="daun"></canvas>
+
+<!-- SCRIPT -->
+<script>
+// Musik main saat disentuh
+document.body.addEventListener('click', () => {
+  const music = document.getElementById('bgm');
+  music.play();
+}, { once: true });
+
+// Countdown
+const targetDate = new Date("October 12, 2025 10:00:00").getTime();
+setInterval(() => {
+  const now = new Date().getTime();
+  const distance = targetDate - now;
+  document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+  document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
+}, 1000);
+
+// Efek daun gugur
+const canvas = document.getElementById('daun');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+let leaves = [];
+
+function Leaf() {
+  this.x = Math.random() * canvas.width;
+  this.y = Math.random() * -canvas.height;
+  this.size = Math.random() * 20 + 10;
+  this.speed = Math.random() * 3 + 1;
+  this.angle = Math.random() * 360;
+}
+
+function drawLeaves() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for (let leaf of leaves) {
+    ctx.beginPath();
+    ctx.fillStyle = "rgba(255, 100, 100, 0.6)";
+    ctx.arc(leaf.x, leaf.y, leaf.size, 0, Math.PI * 2);
+    ctx.fill();
+    leaf.y += leaf.speed;
+    if (leaf.y > canvas.height) {
+      leaf.y = 0;
+      leaf.x = Math.random() * canvas.width;
     }
+  }
+}
 
-    // Countdown
-    const targetDate = new Date("2025-10-12T10:00:00").getTime();
-    const countdown = document.getElementById("countdown");
+function animate() {
+  drawLeaves();
+  requestAnimationFrame(animate);
+}
 
-    const updateCountdown = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
-
-      if (distance < 0) {
-        clearInterval(updateCountdown);
-        countdown.innerHTML = "<strong>Acara Sedang Berlangsung 🎉</strong>";
-        return;
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      countdown.innerHTML = `
-        <div>${days}<span>Hari</span></div>
-        <div>${hours}<span>Jam</span></div>
-        <div>${minutes}<span>Menit</span></div>
-        <div>${seconds}<span>Detik</span></div>`;
-    }, 1000);
-
-    // Ucapan & RSVP
-    function simpanUcapan(e) {
-      e.preventDefault();
-      const nama = e.target.nama.value;
-      const pesan = e.target.pesan.value;
-      const konfirmasi = e.target.konfirmasi.value;
-      const daftar = document.getElementById("daftarUcapan");
-      const div = document.createElement("div");
-      div.className = "ucapan-box";
-      div.innerHTML = `<strong>${nama} (${konfirmasi}):</strong><p>${pesan}</p>`;
-      daftar.prepend(div);
-      e.target.reset();
-      return false;
-    }
-
-    // Daun Gugur
-    function buatDaun() {
-      const daun = document.createElement("div");
-      daun.classList.add("daun");
-      daun.style.left = Math.random() * window.innerWidth + "px";
-      daun.style.animationDuration = 5 + Math.random() * 5 + "s";
-      document.body.appendChild(daun);
-      setTimeout(() => daun.remove(), 10000);
-    }
-    setInterval(buatDaun, 600);
-  </script>
-
+for (let i = 0; i < 50; i++) leaves.push(new Leaf());
+animate();
+</script>
 </body>
 </html>
