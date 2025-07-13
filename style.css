@@ -1,81 +1,62 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-image: url('bunga.jpg'); /* Gambar latar bunga */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  color: #4b3e2d;
+/* 🎬 Opening Screen */
+#opening {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(to bottom, #fff9f9, #ffeaea);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
 }
 
-.container {
-  background-color: rgba(255, 255, 255, 0.92);
-  padding: 2rem;
-  max-width: 700px;
-  margin: 2rem auto;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
-}
-
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-h2 {
-  color: #a07f68;
-  margin-bottom: 0.5rem;
-}
-
-img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 10px;
-  margin: 2rem 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.maps {
-  margin: 2rem 0;
-}
-.countdown-box {
-  background: #fff6f8;
-  padding: 1.5rem;
-  border-radius: 12px;
-  margin: 2rem auto;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-}
-
-#countdown {
-  font-size: 1.2rem;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
+.opening-content h1 {
+  font-size: 2.8rem;
   margin-top: 1rem;
+  color: #8B5E3C;
 }
 
-#countdown div {
-  background: #ffecec;
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
-  min-width: 80px;
+.opening-content h3 {
+  font-size: 1.4rem;
+  color: #7a5c43;
 }
 
-.tanggal-box {
-  background: #fdfdfd;
-  padding: 1.2rem;
-  border-radius: 12px;
-  margin: 2rem auto;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+.opening-content button {
+  margin-top: 2rem;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff8fa3;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
 }
+
+/* 🕊️ Burung animasi */
+.birds {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: url('https://i.ibb.co/ZX1rTzh/birds-flying.png') repeat-x;
+  background-size: contain;
+  animation: flyBirds 20s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes flyBirds {
+  0% { background-position: 0 0; }
+  100% { background-position: 1000px 0; }
+}
+
+/* ⏳ Countdown style */
 #countdown {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 10px;
   margin-top: 1rem;
 }
@@ -98,90 +79,3 @@ img {
   font-weight: normal;
   margin-top: 4px;
 }
-/* Opening Section */
-#opening {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, #fff9f9, #ffeaea);
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  animation: fadein 1s ease;
-}
-
-.opening-content {
-  text-align: center;
-  position: relative;
-}
-
-.opening-content h1 {
-  font-size: 2.8rem;
-  margin-top: 0.5rem;
-  color: #8B5E3C;
-  font-weight: bold;
-}
-
-.opening-content h3 {
-  font-size: 1.4rem;
-  color: #7a5c43;
-  margin-bottom: 1rem;
-}
-
-.opening-content button {
-  margin-top: 2rem;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 8px;
-  background-color: #ff8fa3;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.birds {
-  position: absolute;
-  top: -80px;
-  left: 0;
-  width: 100%;
-  height: 150px;
-  background: url('https://i.imgur.com/Wd8uJSj.png') repeat-x;
-  animation: flyBirds 20s linear infinite;
-  opacity: 0.3;
-}
-
-/* Animasi */
-@keyframes flyBirds {
-  0% { background-position: 0 0; }
-  100% { background-position: 1000px 0; }
-}
-
-@keyframes fadein {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-/* Animasi Burung di Halaman Opening */
-.birds {
-  position: absolute;
-  top: -80px;
-  left: 0;
-  width: 100%;
-  height: 150px;
-  background: url('https://i.ibb.co/ZX1rTzh/birds-flying.png') repeat-x;
-  background-size: contain;
-  animation: flyBirds 20s linear infinite;
-  opacity: 0.3;
-}
-
-/* Animasi terbang ke kanan */
-@keyframes flyBirds {
-  0% { background-position: 0 0; }
-  100% { background-position: 1000px 0; }
-}
-
