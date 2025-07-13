@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <!-- Opening Screen -->
+  <!-- Opening -->
   <div id="opening">
     <div class="opening-content">
       <div class="birds"></div>
@@ -35,7 +35,7 @@
       <div id="countdown"></div>
     </div>
 
-    <!-- Tanggal Acara -->
+    <!-- Tanggal -->
     <div class="tanggal-box">
       <h3>🗓️ Tanggal Acara</h3>
       <p>Sabtu, 12 Oktober 2025<br>Pukul 10.00 WIB</p>
@@ -53,6 +53,31 @@
       </iframe>
     </div>
 
+    <!-- Galeri -->
+    <div class="section">
+      <h3>📸 Galeri Kami</h3>
+      <div class="gallery">
+        <img src="https://i.ibb.co/Gvgjv3x/wedding1.jpg" alt="Galeri 1">
+        <img src="https://i.ibb.co/FHRdzWX/wedding2.jpg" alt="Galeri 2">
+        <img src="https://i.ibb.co/Lnb3dLz/wedding3.jpg" alt="Galeri 3">
+      </div>
+    </div>
+
+    <!-- Form Ucapan -->
+    <div class="section">
+      <h3>📝 Kirim Ucapan</h3>
+      <form name="ucapan" onsubmit="return simpanUcapan(event)">
+        <input type="text" name="nama" placeholder="Nama Anda" required><br>
+        <textarea name="pesan" placeholder="Ucapan & Doa" required></textarea><br>
+        <select name="konfirmasi">
+          <option value="Hadir">Saya akan hadir</option>
+          <option value="Tidak Hadir">Maaf, tidak bisa hadir</option>
+        </select><br>
+        <button type="submit">Kirim</button>
+      </form>
+      <div id="daftarUcapan" class="ucapan-list"></div>
+    </div>
+
     <!-- Penutup -->
     <p>Terima kasih atas kehadiran dan doanya. ❤️</p>
   </div>
@@ -65,6 +90,7 @@
       document.getElementById('undangan').scrollIntoView({ behavior: 'smooth' });
     }
 
+    // Countdown
     const targetDate = new Date("2025-10-12T10:00:00").getTime();
     const countdown = document.getElementById("countdown");
 
@@ -89,6 +115,32 @@
         <div>${minutes}<span>Menit</span></div>
         <div>${seconds}<span>Detik</span></div>`;
     }, 1000);
+
+    // Ucapan & RSVP
+    function simpanUcapan(e) {
+      e.preventDefault();
+      const nama = e.target.nama.value;
+      const pesan = e.target.pesan.value;
+      const konfirmasi = e.target.konfirmasi.value;
+      const daftar = document.getElementById("daftarUcapan");
+      const div = document.createElement("div");
+      div.className = "ucapan-box";
+      div.innerHTML = `<strong>${nama} (${konfirmasi}):</strong><p>${pesan}</p>`;
+      daftar.prepend(div);
+      e.target.reset();
+      return false;
+    }
+
+    // Daun Gugur
+    function buatDaun() {
+      const daun = document.createElement("div");
+      daun.classList.add("daun");
+      daun.style.left = Math.random() * window.innerWidth + "px";
+      daun.style.animationDuration = 5 + Math.random() * 5 + "s";
+      document.body.appendChild(daun);
+      setTimeout(() => daun.remove(), 10000);
+    }
+    setInterval(buatDaun, 600);
   </script>
 
 </body>
