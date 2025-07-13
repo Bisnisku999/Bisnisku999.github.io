@@ -1,4 +1,35 @@
-/* 🎬 Opening Screen */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fff8f8;
+  color: #3c2c2c;
+  text-align: center;
+}
+
+.container {
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  color: #5a3c2e;
+}
+
+.undangan-img {
+  width: 90%;
+  max-width: 400px;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.maps iframe {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-top: 1rem;
+}
+
+/* Opening Screen */
 #opening {
   position: fixed;
   top: 0; left: 0;
@@ -35,7 +66,7 @@
   cursor: pointer;
 }
 
-/* 🕊️ Burung animasi */
+/* Animasi Burung */
 .birds {
   position: absolute;
   top: -60px;
@@ -53,7 +84,7 @@
   100% { background-position: 1000px 0; }
 }
 
-/* ⏳ Countdown style */
+/* Countdown */
 #countdown {
   display: flex;
   justify-content: center;
@@ -62,15 +93,15 @@
 }
 
 #countdown div {
-  background: #fff0f3;
+  background: #ffeef0;
   color: #5c4033;
   padding: 0.7rem 1rem;
   border-radius: 10px;
-  min-width: 85px;
+  min-width: 70px;
   text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   font-weight: bold;
   font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 #countdown div span {
@@ -79,10 +110,3 @@
   font-weight: normal;
   margin-top: 4px;
 }
-.maps iframe {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  margin-top: 1rem;
-}
-
