@@ -3,255 +3,241 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Undangan Bella & Deni</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>Undangan Pernikahan Bella & Deni</title>
+  <link rel="stylesheet" href="style.css"/>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    body { background: #fff9f9; color: #333; scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #fff8f2;
+      overflow-x: hidden;
+    }
 
-    header, section, footer { padding: 20px; text-align: center; }
-
-    #cover {
+    .intro {
       height: 100vh;
-      background: url('https://i.ibb.co/YQ3qTkS/bg-bunga.jpg') center/cover no-repeat;
+      background-color: #fff0f4;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      color: #fff;
-      text-shadow: 0 1px 3px #000;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
     }
 
-    #cover h1 { font-size: 2em; }
-    #cover h2 { font-size: 1.5em; margin: 10px 0; }
-    #cover button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background: #e67e7e;
-      border: none;
+    .intro h1 {
+      font-size: 2.5rem;
+      color: #555;
+      margin-bottom: 0.2rem;
+      text-shadow: 1px 1px #ccc;
+    }
+
+    .intro h2 {
+      font-size: 1.8rem;
+      color: #c1446c;
+      margin-bottom: 2rem;
+    }
+
+    .btn-buka {
+      background: #c1446c;
       color: white;
-      border-radius: 5px;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
       cursor: pointer;
-      margin-top: 20px;
     }
 
-    #undangan h1 { font-size: 26px; margin-bottom: 10px; }
+    section {
+      padding: 2rem;
+      max-width: 768px;
+      margin: auto;
+    }
 
-    .countdown { display: flex; justify-content: center; gap: 10px; margin: 20px 0; }
-    .countdown div {
-      background: #fdeeee;
-      padding: 10px;
+    h2 {
+      text-align: center;
+      color: #5d3c3c;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .count-box {
+      background: #fdecea;
+      padding: 1rem;
       border-radius: 10px;
+      box-shadow: 0 0 5px #eee;
+      text-align: center;
       width: 60px;
     }
 
-    iframe { border-radius: 10px; border: 0; }
-
-    .galeri-box {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin: 10px 0;
-    }
-
-    .galeri-box img {
-      width: 100px;
-      height: 100px;
-      border-radius: 8px;
-      object-fit: cover;
-      box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    }
-
-    .ucapan-box {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      max-width: 400px;
-      margin: 0 auto;
-      padding: 20px;
-      background: #fff;
+    iframe {
+      width: 100%;
+      height: 250px;
+      border: none;
       border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      margin-top: 1rem;
     }
 
-    .ucapan-box input, .ucapan-box textarea, .ucapan-box select, .ucapan-box button {
-      padding: 10px;
-      border-radius: 5px;
+    .gallery img {
+      width: 30%;
+      margin: 1%;
+      border-radius: 10px;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    input, textarea, select, button {
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 8px;
       border: 1px solid #ccc;
     }
 
-    .ucapan-box button {
-      background: #e67e7e;
-      color: #fff;
+    .rekening-box {
+      background: #fff7f2;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-top: 1rem;
+      text-align: center;
+      box-shadow: 0 0 10px #f0e0e0;
+    }
+
+    .rekening-box p {
+      margin: 0.5rem 0;
+      font-weight: bold;
+    }
+
+    .rekening-box button {
+      margin-top: 0.5rem;
+      background: #c1446c;
+      color: white;
       border: none;
     }
 
-    canvas { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 999; }
+    .leaf {
+      position: fixed;
+      top: -50px;
+      width: 30px;
+      height: 30px;
+      background-image: url('https://png.pngtree.com/png-vector/20220602/ourmid/pngtree-green-leaf-cartoon-illustration-png-image_4790324.png');
+      background-size: cover;
+      opacity: 0.8;
+      pointer-events: none;
+      z-index: 9999;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0); opacity: 0.8; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
   </style>
 </head>
 <body>
 
-<!-- COVER -->
-<section id="cover">
+<div class="intro" id="intro">
   <h1>The Wedding of</h1>
   <h2>Bella & Deni</h2>
-  <button onclick="document.getElementById('undangan').scrollIntoView({behavior:'smooth'})">Buka Undangan</button>
-</section>
+  <button class="btn-buka" onclick="document.getElementById('undangan').scrollIntoView({behavior:'smooth'})">Buka Undangan</button>
+</div>
 
-<!-- MUSIK -->
-<audio id="bgm" src="lagu.mp3" autoplay loop></audio>
+<div id="undangan">
+  <section>
+    <h2>Undangan Pernikahan</h2>
+    <p>Dengan hormat kami mengundang Anda ke acara pernikahan:</p>
+    <h2>Bella & Deni</h2>
+  </section>
 
-<!-- UNDANGAN -->
-<section id="undangan">
-  <h1>Undangan Pernikahan</h1>
-  <p>Dengan hormat kami mengundang Anda ke acara pernikahan:</p>
-  <h2>Bella & Deni</h2>
-</section>
-
-<!-- COUNTDOWN -->
-<section id="countdown">
-  <h2>Menuju Hari Bahagia:</h2>
-  <div class="countdown">
-    <div><span id="days">00</span><br>Hari</div>
-    <div><span id="hours">00</span><br>Jam</div>
-    <div><span id="minutes">00</span><br>Menit</div>
-    <div><span id="seconds">00</span><br>Detik</div>
-  </div>
-</section>
-
-<!-- TANGGAL -->
-<section>
-  <h3>📅 Tanggal Acara</h3>
-  <p>Sabtu, 12 Oktober 2025<br>Pukul 10.00 WIB</p>
-</section>
-
-<!-- GOOGLE MAPS -->
-<section>
-  <h3>📍 Lokasi Acara</h3>
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5385589823865!2d106.82951801476905!3d-6.175387995524883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e7db5fa7c5%3A0xc60f0f0219e5c64!2sMonas!5e0!3m2!1sen!2sid!4v1628240928193!5m2!1sen!2sid"
-    width="100%" height="300" allowfullscreen="" loading="lazy"></iframe>
-</section>
-
-<!-- GALERI -->
-<section>
-  <h3>📸 Galeri Kami</h3>
-  <div class="galeri-box">
-    <img src="galeri1.jpg" alt="Galeri 1">
-    <img src="galeri2.jpg" alt="Galeri 2">
-    <img src="galeri3.jpg" alt="Galeri 3">
-  </div>
-</section>
-<section id="rekening">
-  <h2>🎁 Tanda Kasih</h2>
-  <p>Jika berhalangan hadir namun ingin berbagi kebahagiaan, berikut rekening yang dapat digunakan:</p>
-  
-  <div class="rekening-box">
-    <div>
-      <h3>🏦 BCA</h3>
-      <p>Nomor Rekening: <strong id="rekBCA">1234567890</strong></p>
-      <p>a.n. Bella Amelia</p>
-      <button onclick="salinRekening('rekBCA')">Salin Nomor</button>
+  <section>
+    <h2>Menuju Hari Bahagia:</h2>
+    <div class="countdown">
+      <div class="count-box"><div id="days">00</div><small>Hari</small></div>
+      <div class="count-box"><div id="hours">00</div><small>Jam</small></div>
+      <div class="count-box"><div id="minutes">00</div><small>Menit</small></div>
+      <div class="count-box"><div id="seconds">00</div><small>Detik</small></div>
     </div>
-    <div>
-      <h3>🏦 Mandiri</h3>
-      <p>Nomor Rekening: <strong id="rekMandiri">9876543210</strong></p>
-      <p>a.n. Deni Pratama</p>
-      <button onclick="salinRekening('rekMandiri')">Salin Nomor</button>
-    </div>
-    <div>
-      <h3>🔗 QRIS (Dompet Digital)</h3>
-      <img src="qris.png" alt="QRIS" style="width:150px; margin:10px 0;">
-      <p><a href="https://link-qris-kamu.com" target="_blank">Klik di sini untuk bayar via QRIS</a></p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- UCAPAN -->
-<section>
-  <h3>📝 Kirim Ucapan</h3>
-  <div class="ucapan-box">
-    <input type="text" placeholder="Nama Anda">
-    <textarea placeholder="Ucapan & Doa"></textarea>
-    <select>
-      <option>Saya akan hadir</option>
-      <option>Maaf tidak bisa hadir</option>
-    </select>
+  <section>
+    <h2>📍 Lokasi Acara:</h2>
+    <p>Sabtu, 12 Oktober 2025<br>Pukul 10.00 WIB</p>
+    <iframe src="https://www.google.com/maps?q=Monumen+Nasional+Jakarta&output=embed" allowfullscreen></iframe>
+  </section>
+
+  <section>
+    <h2>📸 Galeri Kami</h2>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/150" alt="Galeri 1">
+      <img src="https://via.placeholder.com/150" alt="Galeri 2">
+      <img src="https://via.placeholder.com/150" alt="Galeri 3">
+    </div>
+  </section>
+
+  <section>
+    <h2>📝 Kirim Ucapan</h2>
+    <div class="form-group"><input type="text" placeholder="Nama Anda"/></div>
+    <div class="form-group"><textarea placeholder="Ucapan & Doa"></textarea></div>
+    <div class="form-group">
+      <select>
+        <option>Saya akan hadir</option>
+        <option>Tidak bisa hadir</option>
+      </select>
+    </div>
     <button>Kirim</button>
-  </div>
-</section>
+  </section>
 
-<!-- PENUTUP -->
-<footer>
-  <p>Terima kasih atas kehadiran dan doanya. ❤️</p>
-</footer>
+  <section>
+    <h2>💌 Hadiah Pernikahan</h2>
+    <div class="rekening-box">
+      <p>Bank BCA</p>
+      <p>1234567890 - a.n. Bella Deni</p>
+      <button onclick="copyRekening()">Salin Nomor Rekening</button><br><br>
+      <img src="https://via.placeholder.com/150" alt="QRIS" width="150"/>
+      <p>Scan QRIS untuk memberi hadiah</p>
+    </div>
+  </section>
+</div>
 
-<!-- EFEK DAUN -->
-<canvas id="daun"></canvas>
-
-<!-- SCRIPT -->
 <script>
-// Musik main saat disentuh
-document.body.addEventListener('click', () => {
-  const music = document.getElementById('bgm');
-  music.play();
-}, { once: true });
+  function updateCountdown() {
+    const target = new Date("2025-10-12T10:00:00").getTime();
+    const now = new Date().getTime();
+    const diff = target - now;
 
-// Countdown
-const targetDate = new Date("October 12, 2025 10:00:00").getTime();
-setInterval(() => {
-  const now = new Date().getTime();
-  const distance = targetDate - now;
-  document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
-  document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
-}, 1000);
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((diff % (1000 * 60)) / 1000);
 
-// Efek daun gugur
-const canvas = document.getElementById('daun');
-const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-let leaves = [];
-
-function Leaf() {
-  this.x = Math.random() * canvas.width;
-  this.y = Math.random() * -canvas.height;
-  this.size = Math.random() * 20 + 10;
-  this.speed = Math.random() * 3 + 1;
-  this.angle = Math.random() * 360;
-}
-
-function drawLeaves() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  for (let leaf of leaves) {
-    ctx.beginPath();
-    ctx.fillStyle = "rgba(255, 100, 100, 0.6)";
-    ctx.arc(leaf.x, leaf.y, leaf.size, 0, Math.PI * 2);
-    ctx.fill();
-    leaf.y += leaf.speed;
-    if (leaf.y > canvas.height) {
-      leaf.y = 0;
-      leaf.x = Math.random() * canvas.width;
-    }
+    document.getElementById("days").innerText = d;
+    document.getElementById("hours").innerText = h;
+    document.getElementById("minutes").innerText = m;
+    document.getElementById("seconds").innerText = s;
   }
-}
 
-function animate() {
-  drawLeaves();
-  requestAnimationFrame(animate);
-}
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
 
-for (let i = 0; i < 50; i++) leaves.push(new Leaf());
-animate();
-</script>
-  <script>
-function salinRekening(id) {
-  const text = document.getElementById(id).innerText;
-  navigator.clipboard.writeText(text).then(() => {
-    alert("Nomor rekening berhasil disalin: " + text);
-  });
-}
+  function createLeaf() {
+    const leaf = document.createElement("div");
+    leaf.classList.add("leaf");
+    leaf.style.left = Math.random() * 100 + "vw";
+    leaf.style.animationDuration = 5 + Math.random() * 5 + "s";
+    document.body.appendChild(leaf);
+    setTimeout(() => leaf.remove(), 10000);
+  }
+  setInterval(createLeaf, 600);
+
+  function copyRekening() {
+    navigator.clipboard.writeText("1234567890").then(() => alert("Nomor rekening disalin!"));
+  }
 </script>
 
 </body>
