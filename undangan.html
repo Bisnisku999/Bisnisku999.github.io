@@ -228,7 +228,7 @@
 
     <!-- Galeri Foto Mempelai -->
     <div style="margin-top: 60px;">
-      <h2 style="font-family: 'Great Vibes', cursive; font-size: 2rem; color: #aa4a44; margin-bottom: 10px;">Galeri Kami</h2>
+      <h2 style="font-family: 'Great Vibes', cursive; font-size: 2rem; color: #aa4a44; margin-bottom: 10px;">Galeri Foto</h2>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; max-width: 600px; margin: 0 auto;">
         <img src="https://i.ibb.co/NYr3JHq/couple1.jpg" alt="Galeri 1" style="width: 100%; border-radius: 12px;">
         <img src="https://i.ibb.co/TKVbW4P/couple2.jpg" alt="Galeri 2" style="width: 100%; border-radius: 12px;">
@@ -236,6 +236,17 @@
         <img src="https://i.ibb.co/zFtdMDN/couple4.jpg" alt="Galeri 4" style="width: 100%; border-radius: 12px;">
       </div>
     </div>
+<script>
+  function salinRekening() {
+    const nomor = document.getElementById('rekening').innerText;
+    navigator.clipboard.writeText(nomor).then(() => {
+      document.getElementById('alertSalin').style.display = 'block';
+      setTimeout(() => {
+        document.getElementById('alertSalin').style.display = 'none';
+      }, 1500);
+    });
+  }
+</script>
 
 </body>
 </html>
