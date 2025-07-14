@@ -269,22 +269,8 @@
         <p id="alertSalin" style="font-size: 0.8rem; color: green; margin-top: 5px; display: none;">Disalin!</p>
       </div>
     </div>
-
-<script>
-  function salinRekening() {
-    const nomor = document.getElementById('rekening').innerText;
-    navigator.clipboard.writeText(nomor).then(() => {
-      document.getElementById('alertSalin').style.display = 'block';
-      setTimeout(() => {
-        document.getElementById('alertSalin').style.display = 'none';
-      }, 1500);
-    });
-  }
     <footer style="margin-top: 40px; font-size: 0.9rem; color: #888;">
     <p>&copy; 2025 Undangan ini dibuat oleh <strong>Tim Undangan</strong></p>
   </footer>
-</body>
-</html>
-
 </body>
 </html>
