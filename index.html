@@ -71,5 +71,12 @@
     <h3>Yth. Bapak/Ibu/Saudara/i</h3>
     <a href="undangan.html" class="btn-open">Buka Undangan</a>
   </div>
+  <script>
+  // Simpan izin autoplay saat tombol diklik
+  document.querySelector('.btn-open').addEventListener('click', function () {
+    localStorage.setItem('undangan_autoplay', 'true');
+  });
+</script>
+
 </body>
 </html>
