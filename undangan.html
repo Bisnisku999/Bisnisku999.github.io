@@ -236,38 +236,45 @@
       }, 1500);
     });
   }
-</script>
-      <audio id="musik" src="lagu.mp3" preload="auto"></audio>
+<audio id="musik" src="lagu.mp3" preload="auto" loop></audio>
 
 <script>
   const audio = document.getElementById('musik');
 
-  // Saat halaman dimuat dan diizinkan autoplay
-  window.addEventListener('DOMContentLoaded', function () {
+  // Mainkan lagu jika user masuk dari tombol "Buka Undangan"
+  window.addEventListener('DOMContentLoaded', () => {
     const izinAutoplay = localStorage.getItem('undangan_autoplay');
     if (izinAutoplay === 'true') {
-      audio.play().catch(() => {
-        console.log('Autoplay gagal');
-      });
+      playAudio();
       localStorage.removeItem('undangan_autoplay');
     }
   });
 
-  // Hentikan musik saat keluar dari halaman/tab
-  window.addEventListener('beforeunload', () => {
-    audio.pause();
-    audio.currentTime = 0;
-  });
+  // Fungsi untuk memutar audio
+  function playAudio() {
+    audio.play().catch(() => {
+      console.log('Autoplay gagal, browser blokir.');
+    });
+  }
 
-  // Hentikan musik saat user meninggalkan tab (di-background)
+  // Hentikan lagu saat keluar dari tab atau minimize aplikasi
   document.addEventListener('visibilitychange', function () {
     if (document.hidden) {
       audio.pause();
+    } else {
+      playAudio();
     }
   });
 
-  // Hentikan musik saat halaman disembunyikan (mobile event)
-  window.addEventListener('pagehide', () => {
+  // Jika user kembali dari "back" ke halaman ini, langsung putar lagi
+  window.addEventListener('pageshow', function (event) {
+    if (event.persisted || performance.navigation.type === 2) {
+      playAudio();
+    }
+  });
+
+  // Hentikan lagu kalau user tutup tab/browser
+  window.addEventListener('beforeunload', () => {
     audio.pause();
     audio.currentTime = 0;
   });
