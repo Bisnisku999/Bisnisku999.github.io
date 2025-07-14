@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -124,9 +125,9 @@
 
 <body>
   <div class="container">
-    <div class="bismillah">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
-    <div class="salam">Assalamu'alaikum Wr. Wb</div>
-    <div class="text-isi">
+    <div class="bismillah"data-aos="fade-down">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+    <div class="salam"data-aos="fade-down">Assalamu'alaikum Wr. Wb</div>
+    <div class="text-isi"data-aos="fade-down">
       Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i serta kerabat sekalian untuk menghadiri acara pernikahan kami.
     </div>
     <div class="foto-pengantin">
@@ -272,5 +273,13 @@
     <footer style="margin-top: 40px; font-size: 0.9rem; color: #888;">
     <p>&copy; 2025 Undangan ini dibuat oleh <strong>Tim Undangan</strong></p>
   </footer>
+      <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // durasi animasi dalam milidetik
+    once: true      // hanya animasi 1x saat pertama scroll
+  });
+</script>
+
 </body>
 </html>
