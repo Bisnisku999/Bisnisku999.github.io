@@ -137,37 +137,29 @@
         <p style="margin: 8px 0;">Pukul 11.00 WIB - Selesai</p>
         <p style="margin: 8px 0;">Ds. Kanigoro Kec. Kanigork<br>Blitar</p>
       </div>
-          <!-- Lokasi Acara -->
-    <div style="margin-top: 40px;">
-      <h3 style="margin-bottom: 10px;">Lokasi Acara</h3>
-      <div style="width: 100%; height: 300px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-        <iframe 
-          src="https://maps.app.goo.gl/c7kFY1giTN7MHakf7" 
-          width="100%" 
-          height="100%" 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
-    </div>
-
-    <!-- Countdown -->
-    <div style="margin-top: 50px;">
-      <h3 style="margin-bottom: 10px;">Menuju Hari Bahagia</h3>
-      <div id="countdown" style="font-size: 1.4rem; font-weight: 600; color: #aa4a44;"></div>
-    </div>
+<!-- Lokasi Acara -->
+<div style="margin-top: 50px;">
+  <h3 style="margin-bottom: 10px;">Lokasi Acara</h3>
+  <div style="width: 100%; height: 300px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+    <iframe 
+      src="https://maps.app.goo.gl/c7kFY1giTN7MHakf7" 
+      width="100%" 
+      height="100%" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy">
+    </iframe>
+  </div>
+</div>
 <script>
-  // Atur tanggal acara (format: Tahun, Bulan-1, Tanggal, Jam, Menit, Detik)
-  const eventDate = new Date(2025, 9, 20, 10, 0, 0); // 20 Oktober 2025 pukul 10:00
+  const eventDate = new Date(2025, 9, 20, 10, 0, 0); // 20 Okt 2025, jam 10:00 WIB
 
   function updateCountdown() {
     const now = new Date();
     const diff = eventDate - now;
 
     if (diff <= 0) {
-      document.getElementById("countdown").innerHTML = "Acara sedang berlangsung 🎉";
+      document.getElementById("countdown").innerHTML = "<p>Acara sedang berlangsung 🎉</p>";
       return;
     }
 
@@ -176,12 +168,14 @@
     const minutes = Math.floor((diff / (1000 * 60)) % 60);
     const seconds = Math.floor((diff / 1000) % 60);
 
-    document.getElementById("countdown").innerHTML =
-      `${days} hari ${hours} jam ${minutes} menit ${seconds} detik`;
+    document.getElementById("days").innerText = String(days).padStart(2, '0');
+    document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+    document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+    document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
   }
 
-  updateCountdown(); // Jalankan sekali saat load
-  setInterval(updateCountdown, 1000); // Perbarui tiap detik
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
 </script>
 
 </body>
