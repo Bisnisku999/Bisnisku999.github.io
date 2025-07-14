@@ -78,7 +78,40 @@
     }
   </style>
 </head>
-  <audio id="musik" src="lagu.mp3" preload="auto"></audio
+  <body>
+  <!-- Konten undangan -->
+
+  <audio id="musik" src="lagu.mp3" preload="auto"></audio>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      const izinAutoplay = localStorage.getItem('undangan_autoplay');
+      const audio = document.getElementById('musik');
+
+      if (izinAutoplay === 'true') {
+        audio.play().catch(() => {
+          console.log('Autoplay diblokir oleh browser.');
+        });
+        localStorage.removeItem('undangan_autoplay');
+      }
+
+      // Jika pengguna meninggalkan halaman/tab, hentikan lagu
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+          audio.pause();
+          audio.currentTime = 0;
+        }
+      });
+
+      // Jika halaman ditutup atau berpindah
+      window.addEventListener('beforeunload', function () {
+        audio.pause();
+        audio.currentTime = 0;
+      });
+    });
+  </script>
+</body>
+
 <body>
   <div class="container">
     <div class="bismillah">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
@@ -238,19 +271,5 @@
     });
   }
 </script>
-<script>
-  window.addEventListener('DOMContentLoaded', function () {
-    const izinAutoplay = localStorage.getItem('undangan_autoplay');
-    if (izinAutoplay === 'true') {
-      const audio = document.getElementById('musik');
-      audio.play().catch(() => {
-        // Jika gagal (misal diblok browser), bisa tampilkan tombol manual jika mau
-        console.log('Autoplay gagal, user belum interaksi.');
-      });
-      localStorage.removeItem('undangan_autoplay');
-    }
-  });
-</script>
-
 </body>
 </html>
