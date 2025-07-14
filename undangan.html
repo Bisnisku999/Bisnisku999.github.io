@@ -174,6 +174,26 @@
       <strong>(QS. Ar-Rum: 21)</strong>
     </p>
   </div>
+  <script>
+    const items = document.querySelectorAll('.scroll-item');
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const height = window.innerHeight;
+
+      items.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top >= 0 && rect.top <= height * 0.9) {
+          el.classList.add('visible-scroll');
+        } else {
+          el.classList.remove('visible-scroll');
+        }
+      });
+    });
+
+    window.addEventListener('load', () => {
+      window.dispatchEvent(new Event('scroll'));
+    });
+  </script>
 
   <!-- Save the Date -->
   <div style="padding: 60px 20px; text-align: center;">
