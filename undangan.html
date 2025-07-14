@@ -78,6 +78,7 @@
     }
   </style>
 </head>
+  <audio id="musik" src="musik.mp3" preload="auto"></audio
 <body>
   <div class="container">
     <div class="bismillah">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
@@ -236,6 +237,19 @@
       }, 1500);
     });
   }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', function () {
+    const izinAutoplay = localStorage.getItem('undangan_autoplay');
+    if (izinAutoplay === 'true') {
+      const audio = document.getElementById('musik');
+      audio.play().catch(() => {
+        // Jika gagal (misal diblok browser), bisa tampilkan tombol manual jika mau
+        console.log('Autoplay gagal, user belum interaksi.');
+      });
+      localStorage.removeItem('undangan_autoplay');
+    }
+  });
 </script>
 
 </body>
