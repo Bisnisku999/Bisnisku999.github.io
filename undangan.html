@@ -46,7 +46,6 @@
       margin-bottom: 30px;
     }
     .foto-pengantin {
-      position: relative;
       width: 250px;
       height: 360px;
       border-radius: 30%/15%;
@@ -59,57 +58,22 @@
       height: 100%;
       object-fit: cover;
     }
-    .ornamen-foto {
-      position: absolute;
-      bottom: -20px;
-      right: -20px;
-      width: 80px;
-      z-index: 2;
-      animation: pelanPutar 20s linear infinite;
-      opacity: 0.8;
-    }
-    @keyframes pelanPutar {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    .bunga-kiri, .bunga-kanan {
+    .bunga-animasi {
       position: fixed;
-      width: 130px;
-      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 180px;
+      background: url('https://i.ibb.co/Z1PksRx/blue-floral-corner.png') no-repeat left top,
+                  url('https://i.ibb.co/Z1PksRx/blue-floral-corner.png') no-repeat right top;
+      background-size: 150px;
+      background-repeat: no-repeat;
+      z-index: 10;
+      transition: opacity 0.5s ease;
+    }
+    .bunga-animasi.hide {
+      opacity: 0;
       pointer-events: none;
-      opacity: 0.9;
-    }
-    .bunga-kiri {
-      top: 0;
-      left: 0;
-      animation: pelanNaikTurun 6s ease-in-out infinite;
-    }
-    .bunga-kanan {
-      bottom: 0;
-      right: 0;
-      animation: pelanNaikTurun 6s ease-in-out infinite reverse;
-    }
-    @keyframes pelanNaikTurun {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
-    }
-    body::before,
-    body::after {
-      content: '';
-      position: fixed;
-      width: 150px;
-      height: 150px;
-      background: url('https://i.ibb.co/Z1PksRx/blue-floral-corner.png') no-repeat center center/contain;
-      z-index: -1;
-    }
-    body::before {
-      top: 0;
-      left: 0;
-    }
-    body::after {
-      bottom: 0;
-      right: 0;
-      transform: rotate(180deg);
     }
     .countbox {
       background: #fff;
@@ -133,12 +97,11 @@
   </style>
 </head>
 <body>
-  <img src="bunga-kiri.png" alt="bunga kiri" class="bunga-kiri">
-  <img src="bunga-kanan.png" alt="bunga kanan" class="bunga-kanan">
+  <div class="bunga-animasi" id="bungaAtas"></div>
   <audio id="musik" src="lagu.mp3" preload="auto" loop></audio>
 
-<script>
-  const audio = document.getElementById('musik');
+  <script>
+    const audio = document.getElementById('musik');
 
   // Mainkan lagu jika user masuk dari tombol "Buka Undangan"
   window.addEventListener('DOMContentLoaded', () => {
