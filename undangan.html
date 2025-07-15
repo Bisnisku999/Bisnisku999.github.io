@@ -140,7 +140,21 @@
     audio.pause();
     audio.currentTime = 0;
   });
-</script>
+       // Tampilkan/sembunyikan bunga saat scroll
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', () => {
+      const bunga = document.getElementById('bungaAtas');
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      if (scrollTop > lastScrollTop) {
+        // Scroll ke bawah
+        bunga.classList.add('hide');
+      } else {
+        // Scroll ke atas
+        bunga.classList.remove('hide');
+      }
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+  </script>
 
 <body>
     <div class="container">
