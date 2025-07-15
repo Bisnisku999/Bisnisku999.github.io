@@ -95,54 +95,43 @@
       font-size: 0.9rem;
       color: #555;
     }
+          .galeri {
+  padding: 40px 20px;
+  background-color: #fefefe;
+}
+.galeri h2 {
+  font-size: 1.8rem;
+  font-family: 'Great Vibes', cursive;
+  margin-bottom: 30px;
+  color: #aa4a44;
+}
+
+.foto-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.foto-wrapper img {
+  width: 140px;
+  height: 180px;
+  border-radius: 50% / 30%;
+  object-fit: cover;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.8s ease;
+}
+
+.foto-wrapper img.fade-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
   </style>
 </head>
 <body>
   <audio id="musik" src="lagu.mp3" preload="auto" loop></audio>
-
-<script>
-  const audio = document.getElementById('musik');
-
-  // Mainkan lagu jika user masuk dari tombol "Buka Undangan"
-  window.addEventListener('DOMContentLoaded', () => {
-    const izinAutoplay = localStorage.getItem('undangan_autoplay');
-    if (izinAutoplay === 'true') {
-      playAudio();
-      localStorage.removeItem('undangan_autoplay');
-    }
-  });
-
-  // Fungsi untuk memutar audio
-  function playAudio() {
-    audio.play().catch(() => {
-      console.log('Autoplay gagal, browser blokir.');
-    });
-  }
-
-  // Hentikan lagu saat keluar dari tab atau minimize aplikasi
-  document.addEventListener('visibilitychange', function () {
-    if (document.hidden) {
-      audio.pause();
-    } else {
-      playAudio();
-    }
-  });
-
-  // Jika user kembali dari "back" ke halaman ini, langsung putar lagi
-  window.addEventListener('pageshow', function (event) {
-    if (event.persisted || performance.navigation.type === 2) {
-      playAudio();
-    }
-  });
-
-  // Hentikan lagu kalau user tutup tab/browser
-  window.addEventListener('beforeunload', () => {
-    audio.pause();
-    audio.currentTime = 0;
-  });
-</script>
-
-<body>
     <div class="container">
     <div class="scroll-item bismillah">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
     <div class="scroll-item salam">Assalamu'alaikum Wr. Wb</div>
@@ -244,54 +233,6 @@
     <div class="countbox"><span id="seconds">00</span><div>Detik</div></div>
   </div>
 </div>
-
-<style>
-  .countbox {
-    background: #fff;
-    color: #aa4a44;
-    border-radius: 12px;
-    padding: 16px 20px;
-    width: 80px;
-    text-align: center;
-    font-weight: bold;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
-  }
-  .countbox span {
-    font-size: 1.8rem;
-    display: block;
-    margin-bottom: 5px;
-  }
-  .countbox div {
-    font-size: 0.9rem;
-    color: #555;
-  }
-</style>
-<script>
-  const targetDate = new Date(2025, 9, 20, 10, 0, 0); // 20 Okt 2025, jam 10:00
-
-  function updateCountdown() {
-    const now = new Date();
-    const diff = targetDate - now;
-
-    if (diff <= 0) {
-      document.getElementById("countdown").innerHTML = "<p>Acara sedang berlangsung 🎉</p>";
-      return;
-    }
-
-    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const m = Math.floor((diff / (1000 * 60)) % 60);
-    const s = Math.floor((diff / 1000) % 60);
-
-    document.getElementById("days").innerText = String(d).padStart(2, '0');
-    document.getElementById("hours").innerText = String(h).padStart(2, '0');
-    document.getElementById("minutes").innerText = String(m).padStart(2, '0');
-    document.getElementById("seconds").innerText = String(s).padStart(2, '0');
-  }
-
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-</script>
     <!-- Dompet Digital -->
     <div style="margin-top: 50px;">
       <h2 style="font-family: 'Great Vibes', cursive; font-size: 2rem; color: #aa4a44; margin-bottom: 10px;">Kado Pernikahan</h2>
@@ -316,41 +257,71 @@
     <img src="foto6.jpg" alt="Galeri 6" class="fade-in" />
   </div>
 </div>
-      .galeri {
-  padding: 40px 20px;
-  background-color: #fefefe;
-}
+      <script>
+  const audio = document.getElementById('musik');
 
-.galeri h2 {
-  font-size: 1.8rem;
-  font-family: 'Great Vibes', cursive;
-  margin-bottom: 30px;
-  color: #aa4a44;
-}
+  // Mainkan lagu jika user masuk dari tombol "Buka Undangan"
+  window.addEventListener('DOMContentLoaded', () => {
+    const izinAutoplay = localStorage.getItem('undangan_autoplay');
+    if (izinAutoplay === 'true') {
+      playAudio();
+      localStorage.removeItem('undangan_autoplay');
+    }
+  });
 
-.foto-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
+  // Fungsi untuk memutar audio
+  function playAudio() {
+    audio.play().catch(() => {
+      console.log('Autoplay gagal, browser blokir.');
+    });
+  }
 
-.foto-wrapper img {
-  width: 140px;
-  height: 180px;
-  border-radius: 50% / 30%;
-  object-fit: cover;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  opacity: 0;
-  transform: scale(0.8);
-  transition: all 0.8s ease;
-}
+  // Hentikan lagu saat keluar dari tab atau minimize aplikasi
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) {
+      audio.pause();
+    } else {
+      playAudio();
+    }
+  });
 
-.foto-wrapper img.fade-in.visible {
-  opacity: 1;
-  transform: scale(1);
-}
+  // Jika user kembali dari "back" ke halaman ini, langsung putar lagi
+  window.addEventListener('pageshow', function (event) {
+    if (event.persisted || performance.navigation.type === 2) {
+      playAudio();
+    }
+  });
 
+  // Hentikan lagu kalau user tutup tab/browser
+  window.addEventListener('beforeunload', () => {
+    audio.pause();
+    audio.currentTime = 0;
+  });
+      <script>
+  const targetDate = new Date(2025, 9, 20, 10, 0, 0); // 20 Okt 2025, jam 10:00
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = targetDate - now;
+
+    if (diff <= 0) {
+      document.getElementById("countdown").innerHTML = "<p>Acara sedang berlangsung 🎉</p>";
+      return;
+    }
+
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const m = Math.floor((diff / (1000 * 60)) % 60);
+    const s = Math.floor((diff / 1000) % 60);
+
+    document.getElementById("days").innerText = String(d).padStart(2, '0');
+    document.getElementById("hours").innerText = String(h).padStart(2, '0');
+    document.getElementById("minutes").innerText = String(m).padStart(2, '0');
+    document.getElementById("seconds").innerText = String(s).padStart(2, '0');
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
 <script>
   const galeriImages = document.querySelectorAll('.fade-in');
   const observer = new IntersectionObserver(entries => {
