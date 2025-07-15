@@ -19,57 +19,104 @@
       max-width: 600px;
       margin: auto;
     }
-    .bunga-dekorasi {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 180px;
-      display: flex;
-      justify-content: space-between;
-      padding: 10px 20px;
-      pointer-events: none;
-      z-index: 5;
-      transition: opacity 0.5s ease;
-    }
-    .bunga-dekorasi.hide {
+    .scroll-item {
       opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease-out;
     }
-    .bunga-dekorasi img {
-      width: 140px;
-      height: auto;
-      animation: goyang 6s ease-in-out infinite;
+    .scroll-item.visible-scroll {
+      opacity: 1;
+      transform: translateY(0);
     }
-    @keyframes goyang {
-      0%, 100% { transform: rotate(0deg); }
-      25% { transform: rotate(1deg); }
-      50% { transform: rotate(-1.5deg); }
-      75% { transform: rotate(1deg); }
+    .bismillah {
+      font-size: 1.4rem;
+      font-family: 'Scheherazade New', serif;
+      margin-bottom: 20px;
+    }
+    .salam {
+      font-size: 1.4rem;
+      font-family: 'Great Vibes', cursive;
+      margin-bottom: 10px;
+      color: #2c2c2c;
+    }
+    .text-isi {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+    .foto-pengantin {
+      width: 250px;
+      height: 360px;
+      border-radius: 30%/15%;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      margin: auto;
+    }
+    .foto-pengantin img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  .bunga-animasi {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    pointer-events: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    z-index: 2;
+    transition: opacity 0.6s ease;
+  }
+
+  .bunga-animasi.hide {
+    opacity: 0;
+  }
+
+  .bunga-animasi img {
+    width: 90px;
+    animation: goyang 4s ease-in-out infinite;
+  }
+
+  @keyframes goyang {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(2deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-2deg); }
+  }
+
+  body {
+    padding-top: 130px; /* supaya bunga nggak nutupi isi */
+    }
+    .countbox {
+      background: #fff;
+      color: #aa4a44;
+      border-radius: 12px;
+      padding: 16px 20px;
+      width: 80px;
+      text-align: center;
+      font-weight: bold;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    }
+    .countbox span {
+      font-size: 1.8rem;
+      display: block;
+      margin-bottom: 5px;
+    }
+    .countbox div {
+      font-size: 0.9rem;
+      color: #555;
     }
   </style>
 </head>
 <body>
-  <div class="bunga-dekorasi" id="bungaDekorasi">
-    <img src="bunga-kiri.png" alt="Bunga Kiri">
-    <img src="bunga-kanan.png" alt="Bunga Kanan" style="transform: scaleX(-1);">
-  </div>
-
-  <script>
-    let lastScrollTop = 0;
-    const bunga = document.getElementById('bungaDekorasi');
-    window.addEventListener('scroll', function () {
-      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      if (scrollTop > lastScrollTop) {
-        // scroll down
-        bunga.classList.add('hide');
-      } else {
-        // scroll up
-        bunga.classList.remove('hide');
-      }
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    });
-  </script>
-</body>
+  <div class="bunga-animasi" id="bungaAnimasi">
+  <img src="bunga-kiri.png" alt="bunga kiri">
+  <imh src="bubga-kanan.png" alt="bunga kanan" style="transform: scaleX(-1);">
+</div>
   <audio id="musik" src="lagu.mp3" preload="auto" loop></audio>
 
   <script>
@@ -299,4 +346,4 @@
   </footer>
       <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 </body>
-</html>
+    </html>
