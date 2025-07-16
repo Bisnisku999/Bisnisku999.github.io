@@ -14,7 +14,8 @@
     body {
       font-family: 'Inter', sans-serif;
       height: 100vh;
-      background: url('backround.jpg') no-repeat center center / cover;
+      background: url('backround_compressed.webp') no-repeat center center / cover;
+      background-attachment: fixed;
       position: relative;
       color: white;
     }
@@ -72,11 +73,10 @@
     <a href="undangan.html" class="btn-open">Buka Undangan</a>
   </div>
   <script>
-  // Simpan izin autoplay saat tombol diklik
-  document.querySelector('.btn-open').addEventListener('click', function () {
-    localStorage.setItem('undangan_autoplay', 'true');
-  });
-</script>
-
+    // Simpan izin autoplay saat tombol diklik
+    document.querySelector('.btn-open').addEventListener('click', function () {
+      localStorage.setItem('undangan_autoplay', 'true');
+    });
+  </script>
 </body>
 </html>
