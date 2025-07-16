@@ -9,63 +9,52 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #f9f5ef;
       color: #333;
-      text-align: center;
+      background: #f9f5ef;
+      scroll-behavior: smooth;
     }
-    .background-seksi1 {
+    section.bg-custom {
       background: url('background1.webp') no-repeat center center;
       background-size: cover;
-      padding: 40px 20px 60px;
       position: relative;
+      z-index: 0;
     }
-    .background-seksi1::after {
+    section.bg-custom::before {
       content: "";
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(255,255,255,0.6);
-      z-index: 0;
+      inset: 0;
+      background-color: rgba(255, 255, 255, 0.6);
+      z-index: -1;
     }
     .container {
       max-width: 600px;
       margin: auto;
-      position: relative;
-      z-index: 1;
-    }
-    .scroll-item {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s ease-out;
-    }
-    .scroll-item.visible-scroll {
-      opacity: 1;
-      transform: translateY(0);
+      padding: 40px 20px;
+      text-align: center;
     }
     .bismillah {
       font-size: 1.5rem;
       font-family: 'Scheherazade New', serif;
-      margin-bottom: 20px;
     }
     .salam {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-family: 'Great Vibes', cursive;
-      margin-bottom: 10px;
       color: #2c2c2c;
+      margin: 20px 0 10px;
     }
     .text-isi {
       font-size: 1rem;
       color: #555;
-      line-height: 1.6;
       margin-bottom: 30px;
+      line-height: 1.6;
     }
     .foto-pengantin {
       width: 250px;
       height: 360px;
+      margin: 20px auto;
       border-radius: 30%/15%;
       overflow: hidden;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      margin: 20px auto;
     }
     .foto-pengantin img {
       width: 100%;
@@ -78,27 +67,56 @@
       color: #aa4a44;
       margin: 10px 0;
     }
-    p {
-      font-size: 0.95rem;
-      color: #444;
+    .event-card {
+      background: #fff;
+      border: 2px dashed #e3a6a1;
+      border-radius: 16px;
+      padding: 30px;
+      margin: 20px auto;
+      max-width: 300px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    }
+    .event-card:nth-child(2) {
+      border-color: #9ac1e8;
+      background: #f0f7ff;
+    }
+    .map-modern {
+      width: 100%;
+      max-width: 600px;
+      height: 300px;
+      border-radius: 16px;
+      overflow: hidden;
+      margin: 20px auto;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      border: 1px solid #eaeaea;
+    }
+    .map-modern iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
     }
     .countbox {
       background: #fff;
-      color: #aa4a44;
       border-radius: 12px;
       padding: 16px 20px;
       width: 80px;
       text-align: center;
       font-weight: bold;
       box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+      margin: 10px;
     }
     .countbox span {
       font-size: 1.8rem;
       display: block;
+      margin-bottom: 5px;
+      color: #aa4a44;
     }
     .galeri {
-      padding: 40px 20px;
       background: #fefefe;
+      padding: 40px 20px;
+    }
+    .galeri h2 {
+      margin-bottom: 30px;
     }
     .foto-grid {
       display: grid;
@@ -113,174 +131,185 @@
       border-radius: 50% / 30%;
       object-fit: cover;
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-      transition: 0.5s;
+      transition: all 0.6s ease;
       opacity: 0;
-      transform: scale(0.8);
+      transform: translateY(20px);
     }
     .foto-grid img.visible {
       opacity: 1;
-      transform: scale(1);
-    }
-    .map-modern {
-      width: 100%;
-      max-width: 600px;
-      height: 300px;
-      border-radius: 16px;
-      overflow: hidden;
-      margin: 20px auto;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    }
-    .event-card {
-      background: #fff;
-      padding: 30px;
-      margin: 20px auto;
-      max-width: 320px;
-      border-radius: 20px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      transform: translateY(0);
     }
     .penutup {
       background: #fffaf5;
       padding: 60px 20px;
     }
-    .footer {
-      margin-top: 40px;
+    .penutup p {
+      max-width: 600px;
+      margin: auto;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #444;
+    }
+    footer {
+      text-align: center;
       font-size: 0.9rem;
       color: #888;
-      text-align: center;
+      padding: 20px 0;
+    }
+    button.copy-btn {
+      padding: 6px 12px;
+      background: #aa4a44;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <div class="background-seksi1">
-    <div class="container">
-      <div class="scroll-item bismillah">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
-      <div class="scroll-item salam">Assalamu'alaikum Wr. Wb</div>
-      <div class="scroll-item text-isi">Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara pernikahan kami.</div>
-      <div class="scroll-item foto-pengantin"><img src="pengantin1.webp" alt="Pria"></div>
-      <div class="scroll-item"><h2>Raka Pradana</h2><p>Putra dari Bapak Ahmad & Ibu Siti</p></div>
-      <div class="scroll-item foto-pengantin"><img src="pengantin2.webp" alt="Wanita"></div>
-      <div class="scroll-item"><h2>Dinda Maharani</h2><p>Putri dari Bapak Bambang & Ibu Rukmini</p></div>
+
+<!-- SECTION 1: Background sampai orang tua wanita -->
+<section class="bg-custom">
+  <div class="container scroll-item">
+    <div class="bismillah">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+    <div class="salam">Assalamu'alaikum Wr. Wb</div>
+    <div class="text-isi">
+      Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i serta kerabat sekalian untuk menghadiri acara pernikahan kami.
     </div>
-  </div>
 
-  <div class="scroll-item" style="padding: 40px 20px; background: #fffaf5;">
-    <p style="font-style: italic;">“Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri...”<br><strong>(QS. Ar-Rum: 21)</strong></p>
-  </div>
+    <div class="foto-pengantin"><img src="pengantin1.webp" alt="Pengantin Pria"></div>
+    <h2>Raka Pradana</h2>
+    <p>Putra dari Bapak Ahmad & Ibu Siti</p>
 
-  <div class="scroll-item" style="padding: 60px 20px;">
+    <div class="foto-pengantin"><img src="pengantin2.webp" alt="Pengantin Wanita"></div>
+    <h2>Dinda Maharani</h2>
+    <p>Putri dari Bapak Bambang & Ibu Rukmini</p>
+  </div>
+</section>
+
+<!-- Ayat & Jadwal Acara -->
+<section>
+  <div class="container scroll-item">
+    <p style="font-style: italic; font-size: 1.1rem;">
+      “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri...”<br>
+      <strong>(QS. Ar-Rum: 21)</strong>
+    </p>
+
     <h2>Save the Date</h2>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+    <p>Dengan penuh suka cita, kami mengundang Anda untuk hadir dalam momen bahagia kami.</p>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; margin-top: 40px; gap: 20px;">
       <div class="event-card">
         <h3>Akad Nikah</h3>
-        <p>Minggu, 20 Oktober 2025</p>
-        <p>08.00 WIB - Selesai</p>
-        <p>Ds. Kanigoro, Blitar</p>
+        <p><strong>Minggu, 20 Oktober 2025</strong></p>
+        <p>Pukul 08.00 WIB - Selesai</p>
+        <p>Ds. Kanigoro, Kec. Kanigoro, Blitar</p>
       </div>
       <div class="event-card">
         <h3>Resepsi</h3>
-        <p>Minggu, 20 Oktober 2025</p>
-        <p>11.00 WIB - Selesai</p>
-        <p>Ds. Kanigoro, Blitar</p>
+        <p><strong>Minggu, 20 Oktober 2025</strong></p>
+        <p>Pukul 11.00 WIB - Selesai</p>
+        <p>Ds. Kanigoro, Kec. Kanigoro, Blitar</p>
       </div>
     </div>
-  </div>
 
-  <div class="map-modern">
-    <iframe src="https://maps.google.com/maps?q=Ds.%20Kanigoro%20Blitar&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
-  </div>
+    <h3 style="margin-top: 60px;">Lokasi Acara</h3>
+    <div class="map-modern">
+      <iframe src="https://maps.google.com/maps?q=Ds. Kanigoro Blitar&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+    </div>
 
-  <div class="scroll-item" style="padding: 60px 0;">
     <h3>Menuju Hari Bahagia</h3>
-    <div id="countdown" style="display: flex; justify-content: center; gap: 20px;">
-      <div class="countbox"><span id="days">00</span><div>Hari</div></div>
-      <div class="countbox"><span id="hours">00</span><div>Jam</div></div>
-      <div class="countbox"><span id="minutes">00</span><div>Menit</div></div>
-      <div class="countbox"><span id="seconds">00</span><div>Detik</div></div>
+    <div id="countdown" style="display: flex; justify-content: center; flex-wrap: wrap;">
+      <div class="countbox"><span id="days">00</span>Hari</div>
+      <div class="countbox"><span id="hours">00</span>Jam</div>
+      <div class="countbox"><span id="minutes">00</span>Menit</div>
+      <div class="countbox"><span id="seconds">00</span>Detik</div>
     </div>
   </div>
+</section>
 
-  <div class="scroll-item" style="padding: 50px 20px;">
+<!-- Kado & Galeri -->
+<section class="scroll-item">
+  <div class="container">
     <h2>Kado Pernikahan</h2>
-    <p>Jika Bapak/Ibu ingin memberikan hadiah digital, berikut rekening kami:</p>
-    <div style="background: #fff; padding: 20px; border-radius: 12px; max-width: 400px; margin: auto;">
+    <p>Jika Bapak/Ibu/Saudara/i ingin memberikan hadiah secara digital, berikut rekening kami:</p>
+    <div style="background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); max-width: 400px; margin: auto;">
       <p><strong>BCA - Raka Pratama</strong></p>
       <div style="display: flex; justify-content: space-between;">
         <span id="rekening">1234567890</span>
-        <button onclick="salinRekening()" style="padding: 6px 12px; background: #aa4a44; color: white; border: none; border-radius: 6px;">Salin</button>
+        <button class="copy-btn" onclick="salinRekening()">Salin</button>
       </div>
       <p id="alertSalin" style="font-size: 0.8rem; color: green; display: none;">Disalin!</p>
     </div>
   </div>
+</section>
 
-  <div class="galeri">
+<!-- Galeri -->
+<section class="galeri scroll-item">
+  <div class="container">
     <h2>Galeri Kami</h2>
     <div class="foto-grid">
-      <img src="pengantin1.webp" alt="1" class="fade-in"/>
-      <img src="pengantin2.webp" alt="2" class="fade-in"/>
-      <img src="foto3.webp" alt="3" class="fade-in"/>
-      <img src="foto4.webp" alt="4" class="fade-in"/>
-      <img src="foto5.webp" alt="5" class="fade-in"/>
-      <img src="foto6.webp" alt="6" class="fade-in"/>
+      <img src="pengantin1.webp" alt="Galeri 1">
+      <img src="pengantin2.webp" alt="Galeri 2">
+      <img src="foto3.webp" alt="Galeri 3">
+      <img src="foto4.webp" alt="Galeri 4">
+      <img src="foto5.webp" alt="Galeri 5">
+      <img src="foto6.webp" alt="Galeri 6">
     </div>
   </div>
+</section>
 
-  <div class="penutup">
+<!-- Penutup -->
+<section class="penutup scroll-item">
+  <div class="container">
     <h2>Terima Kasih</h2>
-    <p>Merupakan kehormatan bagi kami jika Bapak/Ibu/Saudara/i berkenan hadir.<br>Wassalamu’alaikum Warahmatullahi Wabarakatuh.</p>
+    <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
+    <p>Wassalamu’alaikum Warahmatullahi Wabarakatuh.</p>
   </div>
+</section>
 
-  <div class="footer">
-    &copy; 2025 Undangan ini dibuat oleh <strong>Nanda Crew</strong>
-  </div>
+<!-- Footer -->
+<footer>&copy; 2025 Undangan ini dibuat oleh <strong>Nanda Crew</strong></footer>
 
-  <script>
-    const items = document.querySelectorAll('.scroll-item');
-    window.addEventListener('scroll', () => {
-      const height = window.innerHeight;
-      items.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top >= 0 && rect.top <= height * 0.9) {
-          el.classList.add('visible-scroll');
-        }
-      });
+<!-- Script -->
+<script>
+  const imgs = document.querySelectorAll('.foto-grid img');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
     });
-    window.dispatchEvent(new Event('scroll'));
+  }, { threshold: 0.3 });
+  imgs.forEach(img => observer.observe(img));
 
-    const fadeImages = document.querySelectorAll('.fade-in');
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.3 });
-    fadeImages.forEach(img => obs.observe(img));
+  function salinRekening() {
+    const rekening = document.getElementById('rekening').innerText;
+    navigator.clipboard.writeText(rekening);
+    document.getElementById('alertSalin').style.display = 'block';
+    setTimeout(() => {
+      document.getElementById('alertSalin').style.display = 'none';
+    }, 2000);
+  }
 
-    function salinRekening() {
-      navigator.clipboard.writeText(document.getElementById('rekening').innerText);
-      document.getElementById('alertSalin').style.display = 'block';
-      setTimeout(() => {
-        document.getElementById('alertSalin').style.display = 'none';
-      }, 2000);
+  const targetDate = new Date(2025, 9, 20, 10, 0, 0);
+  function updateCountdown() {
+    const now = new Date();
+    const diff = targetDate - now;
+    if (diff <= 0) {
+      document.getElementById("countdown").innerHTML = "<p>Acara sedang berlangsung 🎉</p>";
+      return;
     }
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const m = Math.floor((diff / (1000 * 60)) % 60);
+    const s = Math.floor((diff / 1000) % 60);
+    document.getElementById("days").innerText = String(d).padStart(2, '0');
+    document.getElementById("hours").innerText = String(h).padStart(2, '0');
+    document.getElementById("minutes").innerText = String(m).padStart(2, '0');
+    document.getElementById("seconds").innerText = String(s).padStart(2, '0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
 
-    const targetDate = new Date(2025, 9, 20, 10, 0, 0);
-    function updateCountdown() {
-      const now = new Date();
-      const diff = targetDate - now;
-      if (diff <= 0) {
-        document.getElementById("countdown").innerHTML = "<p>Acara sedang berlangsung 🎉</p>";
-        return;
-      }
-      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const m = Math.floor((diff / (1000 * 60)) % 60);
-      const s = Math.floor((diff / 1000) % 60);
-      document.getElementById("days").innerText = d.toString().padStart(2, '0');
-      document.getElementById("hours").innerText = h.toString().padStart(2, '0');
-      document.getElementById("minutes").innerText = m.toString().padStart(2, '0');
-      document.getElementById("seconds").innerText = s.toString().padStart(2, '0');
-    }
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  </script>
 </body>
 </html>
