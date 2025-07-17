@@ -25,7 +25,7 @@
     .background-bagian-khusus {
       background: url('background1.webp') no-repeat center center;
       background-size: cover;
-      padding: 60px 20px;
+      padding: 60px 20px 0;
     }
     .foto-pengantin {
       width: 250px;
@@ -71,83 +71,47 @@
       font-size: 1.8rem;
       display: block;
     }
-    .galeri {
-      padding: 50px 30px;
-      background-color: #fefefe;
+    .svg-wave {
+      margin-top: -1px;
+      line-height: 0;
     }
-    .foto-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
+    .svg-wave path {
+      animation: waveFade 2s ease-in-out;
     }
-    .foto-wrapper img {
-      width: 140px;
-      height: 180px;
-      border-radius: 50% / 30%;
-      object-fit: cover;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    }
-    .event-card {
-      background: #fff;
-      padding: 30px;
-      margin: 20px auto;
-      max-width: 320px;
-      border-radius: 20px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-      border: 1px solid #eee;
-    }
-    .map-oval {
-      width: 300px;
-      height: 200px;
-      border-radius: 50% / 30%;
-      overflow: hidden;
-      margin: 40px auto;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
-    }
-    .map-oval iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-    .penutup {
-      padding: 60px 20px;
-      background: #fffaf5;
-    }
-    footer {
-      margin-top: 40px;
-      font-size: 0.9rem;
-      color: #888;
+    @keyframes waveFade {
+      0% {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Bagian awal dengan background khusus -->
-<div class="background-bagian-khusus">
-  <h1>The Wedding of</h1>
-  <div class="foto-pengantin" data-aos="fade-up">
-    <img src="backround_compressed.webp" alt="Foto Pengantin">
+  <div class="background-bagian-khusus">
+    <h1>The Wedding of</h1>
+    <div class="foto-pengantin">
+      <img src="backround_compressed.webp" alt="Foto Pengantin">
+    </div>
+    <h2>Raka <span>&</span> Dinda</h2>
   </div>
-  <h2 data-aos="fade-up">Raka <span>&</span> Dinda</h2>
 
-  <!-- SVG Transisi Lengkung -->
-  <div style="margin-top: -30px; line-height: 0;">
-    <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg">
-      <path fill="#fdfaf6" d="M0,32 C480,100 960,0 1440,70 L1440,0 L0,0 Z"></path>
+  <!-- SVG Transisi -->
+  <div class="svg-wave">
+    <svg viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg" style="display: block;">
+      <path fill="#fdfaf6" d="M0,40 C400,150 1000,0 1440,100 L1440,0 L0,0 Z"></path>
     </svg>
   </div>
-</div>
 
-  <!-- Ayat dan salam pembuka -->
-  <div class="container" style="background: #fdfaf6;">
-    <p class="text-isi" data-aos="fade-up">
-      “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri...” <strong>(QS. Ar-Rum: 21)</strong>
-   </p>
-    <p class="bismillah" data-aos="fade-up">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
-    <p class="salam" data-aos="fade-up">Assalamu'alaikum Wr. Wb</p>
-    <p class="text-isi" data-aos="fade-up">
-      Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara pernikahan kami.
-    </p>
+  <!-- Ayat & Salam Pembuka -->
+  <div class="container">
+    <p class="text-isi">“Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri...” <strong>(QS. Ar-Rum: 21)</strong></p>
+    <p class="bismillah">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+    <p class="salam">Assalamu'alaikum Wr. Wb</p>
+    <p class="text-isi">Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara pernikahan kami.</p>
   </div>
 
   <!-- Profil Pengantin -->
