@@ -171,6 +171,35 @@
   50% {
     transform: translateY(8px);
   }
+  .ayat-section {
+  background-color: #fef8f0;
+  padding: 80px 20px 0;
+  position: relative;
+  text-align: center;
+}
+.bismillah-section {
+  background-color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+}
+.custom-shape-divider-bottom-isiundangan {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg); /* Arahkan lengkungan ke bawah */
+}
+.custom-shape-divider-bottom-isiundangan svg {
+  position: relative;
+  display: block;
+  width: calc(132% + 1.3px);
+  height: 90px;
+}
+.shape-fill {
+  fill: #ffffff;
+}
   </style>
 </head>
 <body>
@@ -190,18 +219,44 @@
     </div>
   </section>
 
-  <!-- Awal bagian isi undangan -->
-  <section id="isi-undangan">
-    <div class="container">
-      <p class="text-isi" data-aos="fade-up">
-        “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri...” <strong>(QS. Ar-Rum: 21)</strong>
-      </p>
-      <p class="bismillah" data-aos="fade-up">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
-      <p class="salam" data-aos="fade-up">Assalamu'alaikum Wr. Wb</p>
-      <p class="text-isi" data-aos="fade-up">
-        Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara pernikahan kami.
-      </p>
-    </div>
+<!-- Awal bagian isi undangan -->
+<section id="isi-undangan" class="ayat-section">
+  <div class="container">
+    <p class="text-isi" data-aos="fade-up">
+      “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri...” <strong>(QS. Ar-Rum: 21)</strong>
+    </p>
+  </div>
+
+  <!-- Lengkungan ke bawah -->
+  <div class="custom-shape-divider-bottom-isiundangan">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M321.39,56.44C213.48,91.89,104.74,94.09,0,74V120H1200V0C1116.59,
+        29.4,1026.15,52.49,936.58,69.88,840.49,88.94,739.2,98.58,639.56,
+        89.74,544.91,81.44,450.29,56.44,321.39,56.44Z"
+        opacity=".3" class="shape-fill"></path>
+      <path d="M321.39,66.44C213.48,101.89,104.74,104.09,0,84V120H1200V0C1116.59,
+        39.4,1026.15,62.49,936.58,79.88,840.49,98.94,739.2,108.58,639.56,
+        99.74,544.91,91.44,450.29,66.44,321.39,66.44Z"
+        opacity=".5" class="shape-fill"></path>
+      <path d="M321.39,76.44C213.48,111.89,104.74,114.09,0,94V120H1200V0C1116.59,
+        49.4,1026.15,72.49,936.58,89.88,840.49,108.94,739.2,118.58,639.56,
+        109.74,544.91,101.44,450.29,76.44,321.39,76.44Z"
+        class="shape-fill"></path>
+    </svg>
+  </div>
+</section>
+
+<section class="bismillah-section">
+  <div class="container">
+    <p class="bismillah" data-aos="fade-up">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+    <p class="salam" data-aos="fade-up">Assalamu'alaikum Wr. Wb</p>
+    <p class="text-isi" data-aos="fade-up">
+      Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara pernikahan kami.
+    </p>
+  </div>
+</section>
+
 
 <!-- Profil Pengantin -->
 <div class="container profil-pengantin">
