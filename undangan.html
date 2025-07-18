@@ -23,22 +23,56 @@
       margin: auto;
     }
     .background-bagian-khusus {
-      background: url('background1.webp') no-repeat center center;
-      background-size: cover;
-      padding: 60px 20px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    background: url('background1.webp') no-repeat center center;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+  }
+  .background-bagian-khusus img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 20px 0;
+  }
+  .judul {
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 10px;
+  }
+  .nama-pengantin {
+    font-size: 36px;
+    font-family: 'Great Vibes', cursive;
+    color: #b0855b;
+    margin: 0;
+  }
+  .nama-pengantin span {
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+    font-size: 28px;
+    color: #333;
+    margin: 0 10px;
+  }
+  /* Tombol scroll down */
+  .scroll-down {
+    position: absolute;
+    bottom: 20px;
+    font-size: 24px;
+    animation: bounce 1.5s infinite;
+    cursor: pointer;
+    color: #b0855b;
+  }
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
     }
-    .foto-pengantin {
-      width: 250px;
-      height: 360px;
-      border-radius: 30%/15%;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      margin: 30px auto;
-    }
-    .foto-pengantin img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    50% {
+      transform: translateY(8px);
     }
     h1, h2, h3 {
       margin: 0 0 20px;
@@ -139,14 +173,21 @@
   </style>
 </head>
 <body>
-  <!-- Bagian awal dengan background khusus -->
-  <div class="background-bagian-khusus">
-    <h1>The Wedding of</h1>
-    <div class="foto-pengantin" data-aos="fade-up">
-      <img src="backround_compressed.webp" alt="Foto Pengantin">
-    </div>
-    <h2 data-aos="fade-up">Raka <span>&</span> Dinda</h2>
+<!-- BAGIAN AWAL FULLSCREEN -->
+<section class="background-bagian-khusus">
+  <h1 class="judul">The Wedding of</h1>
+
+  <div class="foto-pengantin" data-aos="fade-up">
+    <img src="backround_compressed.webp" alt="Foto Pengantin">
   </div>
+
+  <h2 class="nama-pengantin" data-aos="fade-up">Raka <span>&</span> Dinda</h2>
+
+  <!-- Tombol Scroll Down -->
+  <div class="scroll-down" onclick="document.getElementById('isi-undangan').scrollIntoView({ behavior: 'smooth' });">
+    ⌄
+  </div>
+</section>
 
   <!-- Ayat dan salam pembuka -->
   <div class="container">
