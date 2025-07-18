@@ -171,6 +171,11 @@
   50% {
     transform: translateY(8px);
   }
+  .img-wave {
+  display: block;
+  width: 100%;
+  margin-top: -5px; /* agar tidak ada celah */
+}
   </style>
 </head>
 <body>
@@ -191,17 +196,19 @@
   </section>
 
   <!-- Awal bagian isi undangan -->
-  <section id="isi-undangan">
-    <div class="container">
-      <p class="text-isi" data-aos="fade-up">
-        “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri...” <strong>(QS. Ar-Rum: 21)</strong>
-      </p>
-      <p class="bismillah" data-aos="fade-up">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
-      <p class="salam" data-aos="fade-up">Assalamu'alaikum Wr. Wb</p>
-      <p class="text-isi" data-aos="fade-up">
-        Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara pernikahan kami.
-      </p>
-    </div>
+<section id="isi-undangan" class="ayat-section">
+  <div class="container">
+    <p class="text-isi">“Dan di antara tanda-tanda kekuasaan-Nya...”</p>
+  </div>
+  <img src="wave-transisi.png" alt="Transisi Gelombang" class="img-wave">
+</section>
+
+<section class="bismillah-section">
+  <div class="container">
+    <p class="bismillah">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+  </div>
+</section>
+
 
 <!-- Profil Pengantin -->
 <div class="container profil-pengantin">
