@@ -27,18 +27,36 @@
       background-size: cover;
       padding: 60px 20px;
     }
-    .foto-pengantin {
+    .foto-pengantin-wrapper {
+      position: relative;
       width: 250px;
       height: 360px;
       border-radius: 30%/15%;
+      margin: 30px auto;
       overflow: hidden;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      margin: 30px auto;
     }
-    .foto-pengantin img {
+    .foto-pengantin-wrapper img.foto {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border-radius: 30%/15%;
+    }
+    .bunga-atas, .bunga-bawah {
+      position: absolute;
+      width: 80px;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .bunga-atas {
+      top: -20px;
+      left: -20px;
+      transform: rotate(-15deg);
+    }
+    .bunga-bawah {
+      bottom: -20px;
+      right: -20px;
+      transform: rotate(20deg);
     }
     h1, h2, h3 {
       margin: 0 0 20px;
@@ -123,154 +141,12 @@
   </style>
 </head>
 <body>
-  <!-- Bagian awal dengan background khusus -->
   <div class="background-bagian-khusus">
     <h1>The Wedding of</h1>
-    <div class="foto-pengantin" data-aos="fade-up">
-      <img src="backround_compressed.webp" alt="Foto Pengantin">
+    <div class="foto-pengantin-wrapper" data-aos="fade-up">
+      <img src="backround_compressed.webp" alt="Foto Pengantin" class="foto">
+      <img src="bunga-kanan.png" alt="Bunga Atas" class="bunga-atas">
+      <img src="bunga-kiri.png" alt="Bunga Bawah" class="bunga-bawah">
     </div>
     <h2 data-aos="fade-up">Raka <span>&</span> Dinda</h2>
   </div>
-
-  <!-- Ayat dan salam pembuka -->
-  <div class="container">
-    <p class="text-isi" data-aos="fade-up">
-      “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri...” <strong>(QS. Ar-Rum: 21)</strong>
-   </p>
-    <p class="bismillah" data-aos="fade-up">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
-    <p class="salam" data-aos="fade-up">Assalamu'alaikum Wr. Wb</p>
-    <p class="text-isi" data-aos="fade-up">
-      Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara pernikahan kami.
-    </p>
-  </div>
-
-  <!-- Profil Pengantin -->
-  <div class="container">
-    <div class="foto-pengantin" data-aos="fade-up">
-      <img src="pengantin1.webp" alt="Raka Pradana">
-    </div>
-    <h2 data-aos="fade-up">Raka Pradana</h2>
-    <p data-aos="fade-up">Putra dari Bapak Ahmad & Ibu Siti</p>
-
-    <div class="foto-pengantin" data-aos="fade-up">
-      <img src="pengantin2.webp" alt="Dinda Maharani">
-    </div>
-    <h2 data-aos="fade-up">Dinda Maharani</h2>
-    <p data-aos="fade-up">Putri dari Bapak Bambang & Ibu Rukmini</p>
-  </div>
-
-  <!-- Tanggal Acara -->
-    <div class="scroll-item" style="padding: 60px 20px;">
-    <h2 style="font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: #aa4a44; margin-bottom: 10px;">Save the Date</h2>
-    <p style="font-size: 1rem; color: #444;">Dengan penuh suka cita, kami mengundang Anda untuk hadir dalam momen bahagia kami.</p>
-
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; margin-top: 40px; gap: 20px;">
-    <!-- Kartu Akad Nikah -->
-    <div class="scroll-item" style="background-color: #fff5f2; border: 2px dashed #e3a6a1; border-radius: 16px; padding: 30px; max-width: 300px; width: 100%; box-shadow: 0 6px 16px rgba(0,0,0,0.06);">
-      <h3 style="font-family: 'Great Vibes', cursive; font-size: 2rem; color: #d4716f; margin-bottom: 10px;">Akad Nikah</h3>
-      <p style="margin: 8px 0; font-weight: 600;">Minggu, 20 Oktober 2025</p>
-      <p style="margin: 8px 0;">Pukul 08.00 WIB - Selesai</p>
-      <p style="margin: 8px 0;">Ds. Kanigoro, Kec. Kanigoro, Blitar</p>
-    </div>
-
-    <!-- Kartu Resepsi -->
-    <div class="scroll-item" style="background-color: #f0f7ff; border: 2px dashed #9ac1e8; border-radius: 16px; padding: 30px; max-width: 300px; width: 100%; box-shadow: 0 6px 16px rgba(0,0,0,0.06);">
-      <h3 style="font-family: 'Great Vibes', cursive; font-size: 2rem; color: #4b89af; margin-bottom: 10px;">Resepsi</h3>
-      <p style="margin: 8px 0; font-weight: 600;">Minggu, 20 Oktober 2025</p>
-      <p style="margin: 8px 0;">Pukul 11.00 WIB - Selesai</p>
-      <p style="margin: 8px 0;">Ds. Kanigoro, Kec. Kanigoro, Blitar</p>
-    </div>
-  </div>
-</div>
-
-
-  <!-- Lokasi Acara -->
-  <div class="event-card" data-aos="fade-up">
-    <h3>Lokasi Acara</h3>
-    <div class="map-oval">
-      <iframe src="https://maps.google.com/maps?q=Ds. Kanigoro Blitar&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
-    </div>
-  </div>
-
-  <!-- Countdown -->
-  <div class="container" data-aos="fade-up">
-    <h3>Menuju Hari Bahagia</h3>
-    <div id="countdown" style="display:flex; justify-content:center; gap:20px;"></div>
-  </div>
-
-  <!-- Kado Pernikahan -->
-  <div class="container" data-aos="fade-up">
-    <h2>Kado Pernikahan</h2>
-    <p>Jika ingin memberikan hadiah digital, berikut rekening kami:</p>
-    <div style="background:#fff; padding:20px; border-radius:12px; max-width:400px; margin:auto;">
-      <p><strong>BCA - Raka Pratama</strong></p>
-      <div style="display:flex; justify-content:space-between;">
-        <span id="rekening">1234567890</span>
-        <button onclick="salinRekening()">Salin</button>
-      </div>
-      <p id="alertSalin" style="display:none; color:green; font-size:0.9rem;">Disalin!</p>
-    </div>
-  </div>
-
-  <!-- Galeri Foto -->
-  <div class="galeri" data-aos="fade-up">
-    <h2>Galeri Kami</h2>
-    <div class="foto-wrapper">
-      <img src="pengantin1.webp" alt="Galeri 1">
-      <img src="pengantin2.webp" alt="Galeri 2">
-      <img src="foto3.webp" alt="Galeri 3">
-      <img src="foto4.webp" alt="Galeri 4">
-      <img src="foto5.webp" alt="Galeri 5">
-      <img src="foto6.webp" alt="Galeri 6">
-    </div>
-  </div>
-
-  <!-- Penutup -->
-  <!-- Bagian awal dengan background khusus -->
-  <div class="background-bagian-khusus-penutup">
-  <div class="penutup" data-aos="fade-up">
-    <h2>Terima Kasih</h2>
-    <p>
-      Kehadiran dan doa restu Anda sangat berarti bagi kami.
-      Wassalamu’alaikum Warahmatullahi Wabarakatuh.
-    </p>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Undangan ini dibuat oleh <strong>Ruang Digital</strong></p>
-  </footer>
-
-  <!-- Script AOS & Countdown -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1000 });
-
-    function salinRekening() {
-      navigator.clipboard.writeText(document.getElementById("rekening").innerText);
-      const alert = document.getElementById("alertSalin");
-      alert.style.display = "block";
-      setTimeout(() => alert.style.display = "none", 2000);
-    }
-
-    const targetDate = new Date(2025, 9, 20, 10, 0, 0);
-    function updateCountdown() {
-      const now = new Date();
-      const diff = targetDate - now;
-      if (diff <= 0) return;
-      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const m = Math.floor((diff / (1000 * 60)) % 60);
-      const s = Math.floor((diff / 1000) % 60);
-      document.getElementById("countdown").innerHTML = `
-        <div class="countbox"><span>${d}</span><div>Hari</div></div>
-        <div class="countbox"><span>${h}</span><div>Jam</div></div>
-        <div class="countbox"><span>${m}</span><div>Menit</div></div>
-        <div class="countbox"><span>${s}</span><div>Detik</div></div>
-      `;
-    }
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  </script>
-</body>
-</html>
