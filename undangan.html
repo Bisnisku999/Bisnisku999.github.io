@@ -136,29 +136,71 @@
       text-align: center;
       font-family: 'Great Vibes', cursive;
   }
+    .hero-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+.nama-pengantin {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  color: #aa4a44;
+}
+.nama-pengantin span {
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  color: #555;
+}
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  font-size: 24px;
+  animation: bounce 1.5s infinite;
+  cursor: pointer;
+  color: #aa4a44;
+}
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
   </style>
 </head>
 <body>
-  <!-- Bagian awal dengan background khusus -->
-  <div class="background-bagian-khusus">
-    <h1>The Wedding of</h1>
+  <!-- Bagian awal fullscreen -->
+  <section class="background-bagian-khusus hero-section">
+    <h1 class="judul">The Wedding of</h1>
+
     <div class="foto-pengantin" data-aos="fade-up">
       <img src="backround_compressed.webp" alt="Foto Pengantin">
     </div>
-    <h2 data-aos="fade-up">Raka <span>&</span> Dinda</h2>
-  </div>
 
-  <!-- Ayat dan salam pembuka -->
-  <div class="container">
-    <p class="text-isi" data-aos="fade-up">
-      “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri...” <strong>(QS. Ar-Rum: 21)</strong>
-   </p>
-    <p class="bismillah" data-aos="fade-up">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
-    <p class="salam" data-aos="fade-up">Assalamu'alaikum Wr. Wb</p>
-    <p class="text-isi" data-aos="fade-up">
-      Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara pernikahan kami.
-    </p>
-  </div>
+    <h2 class="nama-pengantin" data-aos="fade-up">Raka <span>&</span> Dinda</h2>
+
+    <!-- Tombol Scroll Down -->
+    <div class="scroll-down" onclick="document.getElementById('isi-undangan').scrollIntoView({ behavior: 'smooth' });">
+      ⌄
+    </div>
+  </section>
+
+  <!-- Awal bagian isi undangan -->
+  <section id="isi-undangan">
+    <div class="container">
+      <p class="text-isi" data-aos="fade-up">
+        “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri...” <strong>(QS. Ar-Rum: 21)</strong>
+      </p>
+      <p class="bismillah" data-aos="fade-up">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+      <p class="salam" data-aos="fade-up">Assalamu'alaikum Wr. Wb</p>
+      <p class="text-isi" data-aos="fade-up">
+        Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara pernikahan kami.
+      </p>
+    </div>
 
 <!-- Profil Pengantin -->
 <div class="container profil-pengantin">
