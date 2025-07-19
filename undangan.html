@@ -178,19 +178,19 @@
   cursor: pointer;
   color: #aa4a44;
 }
-    @keyframes fadeUp {
-      0% {
+    @keyframes zoomIn {
+      from {
         opacity: 0;
-        transform: translateY(60px);
+        transform: scale(0.8);
       }
-      100% {
+      to {
         opacity: 1;
-        transform: translateY(0);
+        transform: scale(1);
       }
     }
 
-    .fade-up {
-      animation: fadeUp 1.2s ease-out forwards;
+    .zoom-in {
+      animation: zoomIn 1s ease-out forwards;
     }
   </style>
 </head>
@@ -245,15 +245,15 @@
 
 <!-- Tanggal Acara -->
   <div style="display: flex; justify-content: center; padding: 60px 20px;">
-    <div class="fade-up" style="position: relative; width: 100%; max-width: 700px;">
+    <div class="zoom-in" style="position: relative; width: 100%; max-width: 700px;">
 
-      <!-- SVG bentuk kapsul runcing -->
+      <!-- SVG bentuk lancip atas & bawah -->
       <svg viewBox="0 0 200 600" preserveAspectRatio="none"
         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
         <path d="M100,0 L200,40 V560 L100,600 L0,560 V40 Z" fill="#ffffff" />
       </svg>
 
-      <!-- Isi -->
+      <!-- Konten undangan -->
       <div style="position: relative; z-index: 1; padding: 60px 20px; text-align: center;">
         <h2 style="font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: #aa4a44;">Save the Date</h2>
         <p style="font-size: 1rem; color: #444;">Dengan penuh suka cita, kami mengundang Anda untuk hadir dalam momen bahagia kami.</p>
