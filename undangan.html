@@ -178,23 +178,20 @@
   cursor: pointer;
   color: #aa4a44;
 }
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(8px);
-  }
-  @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(60px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-up {
+      animation: fadeUp 1.2s ease-out forwards;
+    }
   </style>
 </head>
 <body>
@@ -247,47 +244,38 @@
 
 
 <!-- Tanggal Acara -->
-<div style="display: flex; justify-content: center; padding: 60px 20px;">
-  <div style="position: relative; width: 100%; max-width: 700px; animation: fadeUp 1.4s ease-out;">
+  <div style="display: flex; justify-content: center; padding: 60px 20px;">
+    <div class="fade-up" style="position: relative; width: 100%; max-width: 700px;">
 
-    <!-- SVG Latar belakang bentuk runcing -->
-    <svg viewBox="0 0 200 600" preserveAspectRatio="none"
-      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
-      <path d="M100,0 L200,40 V560 L100,600 L0,560 V40 Z" fill="#ffffff" />
-    </svg>
+      <!-- SVG bentuk kapsul runcing -->
+      <svg viewBox="0 0 200 600" preserveAspectRatio="none"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
+        <path d="M100,0 L200,40 V560 L100,600 L0,560 V40 Z" fill="#ffffff" />
+      </svg>
 
-    <!-- Isi konten -->
-    <div style="
-      position: relative;
-      z-index: 1;
-      padding: 60px 20px;
-      text-align: center;
-    ">
-      <h2 style="font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: #aa4a44;">Save the Date</h2>
-      <p style="font-size: 1rem; color: #444;">Dengan penuh suka cita, kami mengundang Anda untuk hadir dalam momen bahagia kami.</p>
+      <!-- Isi -->
+      <div style="position: relative; z-index: 1; padding: 60px 20px; text-align: center;">
+        <h2 style="font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: #aa4a44;">Save the Date</h2>
+        <p style="font-size: 1rem; color: #444;">Dengan penuh suka cita, kami mengundang Anda untuk hadir dalam momen bahagia kami.</p>
 
-      <div style="display: flex; flex-wrap: wrap; justify-content: center; margin-top: 40px; gap: 20px;">
-        <!-- Akad -->
-        <div style="background-color: #fff5f2; border: 2px dashed #e3a6a1; border-radius: 16px; padding: 30px; max-width: 300px; width: 100%;">
-          <h3 style="font-family: 'Great Vibes', cursive; font-size: 2rem; color: #d4716f;">Akad Nikah</h3>
-          <p style="font-weight: 600;">Minggu, 20 Oktober 2025</p>
-          <p>Pukul 08.00 WIB - Selesai</p>
-          <p>Ds. Kanigoro, Kec. Kanigoro, Blitar</p>
-        </div>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; margin-top: 40px; gap: 20px;">
+          <!-- Akad -->
+          <div style="background-color: #fff5f2; border: 2px dashed #e3a6a1; border-radius: 16px; padding: 30px; max-width: 300px; width: 100%;">
+            <h3 style="font-family: 'Great Vibes', cursive; font-size: 2rem; color: #d4716f;">Akad Nikah</h3>
+            <p style="font-weight: 600;">Minggu, 20 Oktober 2025</p>
+            <p>Pukul 08.00 WIB - Selesai</p>
+            <p>Ds. Kanigoro, Kec. Kanigoro, Blitar</p>
+          </div>
 
-        <!-- Resepsi -->
-        <div style="background-color: #f0f7ff; border: 2px dashed #9ac1e8; border-radius: 16px; padding: 30px; max-width: 300px; width: 100%;">
-          <h3 style="font-family: 'Great Vibes', cursive; font-size: 2rem; color: #4b89af;">Resepsi</h3>
-          <p style="font-weight: 600;">Minggu, 20 Oktober 2025</p>
-          <p>Pukul 11.00 WIB - Selesai</p>
-          <p>Ds. Kanigoro, Kec. Kanigoro, Blitar</p>
+          <!-- Resepsi -->
+          <div style="background-color: #f0f7ff; border: 2px dashed #9ac1e8; border-radius: 16px; padding: 30px; max-width: 300px; width: 100%;">
+            <h3 style="font-family: 'Great Vibes', cursive; font-size: 2rem; color: #4b89af;">Resepsi</h3>
+            <p style="font-weight: 600;">Minggu, 20 Oktober 2025</p>
+            <p>Pukul 11.00 WIB - Selesai</p>
+            <p>Ds. Kanigoro, Kec. Kanigoro, Blitar</p>
+          </div>
         </div>
       </div>
-    </div>
-
-  </div>
-</div>
-
   <!-- Lokasi Acara -->
   <div class="event-card" data-aos="fade-up">
     <h3>Lokasi Acara</h3>
