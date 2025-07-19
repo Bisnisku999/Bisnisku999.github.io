@@ -237,24 +237,18 @@
 
 
 <!-- Tanggal Acara -->
-<div class="scroll-item" style="padding: 60px 20px;">
-  <div style="max-width: 700px; margin: auto;">
+<div style="display: flex; justify-content: center; padding: 60px 20px;">
+  <div style="position: relative; width: 100%; max-width: 700px;">
 
-    <!-- Lengkung Atas -->
-    <div style="height: 80px; overflow: hidden;">
-      <svg viewBox="0 0 500 80" preserveAspectRatio="none" style="width: 100%; height: 100%;">
-        <path d="M0,80 C150,0 350,0 500,80 L500,0 L0,0 Z" fill="#ffffff"></path>
-      </svg>
-    </div>
+    <!-- SVG Latar belakang -->
+    <svg viewBox="0 0 200 600" preserveAspectRatio="none"
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
+      <path d="M100,0 L200,40 V560 L100,600 L0,560 V40 Z" fill="#ffffff" />
+    </svg>
 
-    <!-- Kotak Konten (tinggi menyesuaikan isi) -->
-    <div style="
-      background-color: #ffffff;
-      text-align: center;
-      padding: 50px 20px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-    ">
-      <h2 style="font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: #aa4a44; margin-bottom: 10px;">Save the Date</h2>
+    <!-- Konten Undangan -->
+    <div style="position: relative; z-index: 1; padding: 60px 20px; text-align: center;">
+      <h2 style="font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: #aa4a44;">Save the Date</h2>
       <p style="font-size: 1rem; color: #444;">Dengan penuh suka cita, kami mengundang Anda untuk hadir dalam momen bahagia kami.</p>
 
       <div style="display: flex; flex-wrap: wrap; justify-content: center; margin-top: 40px; gap: 20px;">
@@ -276,15 +270,9 @@
       </div>
     </div>
 
-    <!-- Lengkung Bawah -->
-    <div style="height: 80px; overflow: hidden; transform: rotate(180deg);">
-      <svg viewBox="0 0 500 80" preserveAspectRatio="none" style="width: 100%; height: 100%;">
-        <path d="M0,80 C150,0 350,0 500,80 L500,0 L0,0 Z" fill="#ffffff"></path>
-      </svg>
-    </div>
-
   </div>
 </div>
+
 
 
 
