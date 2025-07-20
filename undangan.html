@@ -219,24 +219,36 @@
     font-size: 1.2rem;
     line-height: 1.2;
   }
+    .nama-pengantin {
+    font-family: 'Allura', cursive;
+    font-size: 3rem;
+    font-weight: normal;
+    color: #8e5c5c; /* Warna elegan seperti pada gambar */
+    margin-top: 20px;
+  }
+  .nama-pengantin span {
+    font-family: 'Allura', cursive;
+    margin: 0 10px;
+  }
   </style>
 </head>
 <body>
   <!-- Bagian awal fullscreen -->
-  <section class="background-bagian-khusus hero-section">
-    <h1 class="judul">The Wedding of</h1>
+<section class="background-bagian-khusus hero-section">
+  <h1 class="judul">The Wedding of</h1>
 
-    <div class="foto-pengantin" data-aos="fade-up">
-      <img src="backround_compressed.webp" alt="Foto Pengantin">
-    </div>
+  <div class="foto-pengantin" data-aos="fade-up">
+    <img src="backround_compressed.webp" alt="Foto Pengantin">
+  </div>
 
-    <h2 class="nama-pengantin" data-aos="fade-up">Raka <span>&</span> Dinda</h2>
+  <!-- Nama pengantin dengan font Allura -->
+  <h2 class="nama-pengantin" data-aos="fade-up">Raka <span>&</span> Dinda</h2>
 
-    <!-- Tombol Scroll Down -->
-    <div class="scroll-down" onclick="document.getElementById('isi-undangan').scrollIntoView({ behavior: 'smooth' });">
-      ⌄
-    </div>
-  </section>
+  <!-- Tombol Scroll Down -->
+  <div class="scroll-down" onclick="document.getElementById('isi-undangan').scrollIntoView({ behavior: 'smooth' });">
+    ⌄
+  </div>
+</section>
 
   <!-- Awal bagian isi undangan -->
   <section id="isi-undangan">
