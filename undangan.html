@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-
 <html lang="id">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Undangan Pernikahan</title>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&amp;display=swap" rel="stylesheet"/>
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Pernikahan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
 /* =========================
    GLOBAL RESET & FONTS
 ========================= */
@@ -338,7 +338,7 @@ footer {
   </style>
 </head>
 <body>
-<!-- Bagian awal fullscreen -->
+  <!-- Bagian awal fullscreen -->
 <section class="background-bagian-khusus hero-section" style="
   display: flex;
   flex-direction: column;
@@ -349,7 +349,8 @@ footer {
   padding-bottom: 200px;
   text-align: center;
 ">
-<h1 class="judul" data-aos="fade-down" data-aos-delay="0" style="
+
+  <h1 class="judul" style="
     font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
     color: #333;
@@ -357,8 +358,9 @@ footer {
   ">
     The Wedding of
   </h1>
-<!-- Foto pengantin -->
-<div class="foto-pengantin" data-aos="zoom-in" data-aos-delay="300" style="
+
+  <!-- Foto pengantin -->
+  <div class="foto-pengantin" data-aos="fade-up" style="
     width: 260px;
     height: 340px;
     border-radius: 28px;
@@ -366,19 +368,21 @@ footer {
     box-shadow: 0 8px 24px rgba(0,0,0,0.15);
     margin-bottom: 30px;
   ">
-<img alt="Foto Pengantin" src="backround_compressed.webp" style="width: 100%; height: 100%; object-fit: cover;"/>
-</div>
-<!-- Nama Pengantin -->
-<h2 class="nama-pengantin" data-aos="fade-up" data-aos-delay="600" style="
+    <img src="backround_compressed.webp" alt="Foto Pengantin" style="width: 100%; height: 100%; object-fit: cover;">
+  </div>
+
+  <!-- Nama Pengantin -->
+  <h2 class="nama-pengantin" data-aos="fade-up" style="
     font-family: 'Allura', cursive;
     font-size: 2.5rem;
     color: #8A4A44;
     font-weight: 400;
   ">
-    Raka <span style="color: #444;">&amp;</span> Dinda
+    Raka <span style="color: #444;">&</span> Dinda
   </h2>
-<!-- Tombol Scroll Down -->
-<div class="scroll-down" data-aos="fade-up" data-aos-delay="900" onclick="document.getElementById('isi-undangan').scrollIntoView({ behavior: 'smooth' });" style="
+
+  <!-- Tombol Scroll Down -->
+  <div class="scroll-down" onclick="document.getElementById('isi-undangan').scrollIntoView({ behavior: 'smooth' });" style="
     font-size: 2rem;
     margin-top: 30px;
     cursor: pointer;
@@ -387,28 +391,32 @@ footer {
     ⌄
   </div>
 </section>
+
 <!-- BAGIAN ISI UNDANGAN DENGAN BACKGROUND MELENGKUNG & ANIMASI BUNGA -->
 <section id="isi-undangan" style="position: relative; background-color: #7B9DBA; overflow: hidden; padding: 80px 20px; display: flex; justify-content: center; border-radius: 40px;">
-<!-- BUNGA ANIMASI - KANAN ATAS -->
-<img alt="bunga atas" class="bunga-animasi" src="bungakanan.webp" style="
+
+  <!-- BUNGA ANIMASI - KANAN ATAS -->
+  <img src="bungakanan.webp" alt="bunga atas" class="bunga-animasi" style="
     position: absolute;
     top: 0;
     right: 0;
     width: 190px;
     animation: melayang 6s ease-in-out infinite;
     z-index: 0;
-  "/>
-<!-- BUNGA ANIMASI - KIRI BAWAH -->
-<img alt="bunga bawah" class="bunga-animasi" src="bungakanan.webp" style="
+  ">
+
+  <!-- BUNGA ANIMASI - KIRI BAWAH -->
+  <img src="bungakanan.webp" alt="bunga bawah" class="bunga-animasi" style="
     position: absolute;
     bottom: 0;
     left: 0;
     width: 190px;
     animation: melayang 8s ease-in-out infinite;
     z-index: 0;
-  "/>
-<!-- KOTAK DALAM -->
-<div style="
+  ">
+
+  <!-- KOTAK DALAM -->
+  <div style="
     background-image: url('begroundhalaman1.webp');
     background-size: cover;
     background-position: center;
@@ -421,56 +429,66 @@ footer {
     position: relative;
     z-index: 2;
   ">
-<p class="text-isi" data-aos="zoom-out" data-aos-duration="1000" data-aos-once="false" style="font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #333;">
+    <p class="text-isi" data-aos="fade-up" style="font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #333;">
       “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri...”
-      <br/><strong>(QS. Ar-Rum: 21)</strong>
-</p>
-</div>
+      <br><strong>(QS. Ar-Rum: 21)</strong>
+    </p>
+  </div>
 </section>
-<p class="bismillah" data-aos="fade-right">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
-<p class="salam" data-aos="zoom-in">Assalamu'alaikum Wr. Wb</p>
-<p class="text-isi" data-aos="fade-right" data-aos-duration="1000" data-aos-once="false">
+
+
+      <p class="bismillah" data-aos="fade-up">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+      <p class="salam" data-aos="fade-up">Assalamu'alaikum Wr. Wb</p>
+      <p class="text-isi" data-aos="fade-up">
         Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara pernikahan kami.
       </p>
+    </div>
 
 <!-- Profil Pengantin -->
 <div class="container profil-pengantin">
-<div class="foto-pengantin" data-aos="flip-left">
-<img alt="Raka Pradana" src="pengantin1.webp"/>
+  <div class="foto-pengantin" data-aos="fade-up">
+    <img src="pengantin1.webp" alt="Raka Pradana">
+  </div>
+  <h2 data-aos="fade-up">Raka Pradana</h2>
+  <p data-aos="fade-up">Putra dari Bapak Ahmad & Ibu Siti</p>
+
+  <!-- Simbol & di tengah -->
+  <div class="and-symbol" data-aos="zoom-in">&</div>
+
+  <div class="foto-pengantin" data-aos="fade-up">
+    <img src="pengantin2.webp" alt="Dinda Maharani">
+  </div>
+  <h2 data-aos="fade-up">Dinda Maharani</h2>
+  <p data-aos="fade-up">Putri dari Bapak Bambang & Ibu Rukmini</p>
 </div>
-<h2 data-aos="flip-right">Raka Pradana</h2>
-<p data-aos="slide-up">Putra dari Bapak Ahmad &amp; Ibu Siti</p>
-<!-- Simbol & di tengah -->
-<div class="and-symbol" data-aos="slide-down">&amp;</div>
-<div class="foto-pengantin" data-aos="slide-left">
-<img alt="Dinda Maharani" src="pengantin2.webp"/>
-</div>
-<h2 data-aos="slide-right">Dinda Maharani</h2>
-<p data-aos="fade-up">Putri dari Bapak Bambang &amp; Ibu Rukmini</p>
-</div>
+
+
 <!-- Tanggal Acara dengan 2 Layer Background -->
 <div class="outer-container">
-<!-- BUNGA ANIMASI - KANAN ATAS -->
-<img alt="bunga atas" class="bunga-animasi" src="bungakanan.webp" style="
+
+  <!-- BUNGA ANIMASI - KANAN ATAS -->
+  <img src="bungakanan.webp" alt="bunga atas" class="bunga-animasi" style="
     position: absolute;
     top: 0;
     right: 0;
     width: 190px;
     animation: melayang 6s ease-in-out infinite;
     z-index: 0;
-  "/>
-<!-- BUNGA ANIMASI - KIRI BAWAH -->
-<img alt="bunga bawah" class="bunga-animasi" src="bungakanan.webp" style="
+  ">
+
+  <!-- BUNGA ANIMASI - KIRI BAWAH -->
+  <img src="bungakanan.webp" alt="bunga bawah" class="bunga-animasi" style="
     position: absolute;
     bottom: 0;
     left: 0;
     width: 190px;
     animation: melayang 8s ease-in-out infinite;
     z-index: 0;
-  "/>
-<!-- Kotak Dalam -->
-<div class="inner-box zoom-in" data-aos="zoom-in" data-aos-duration="1000" data-aos-once="false">
-<h2 style="
+  ">
+
+  <!-- Kotak Dalam -->
+  <div class="inner-box zoom-in">
+    <h2 style="
       font-family: 'Playfair Display', serif;
       font-weight: bold;
       font-size: 2.5rem;
@@ -478,16 +496,17 @@ footer {
     ">
       Save the Date
     </h2>
-<p style="
+    <p style="
       font-family: 'Playfair Display', serif;
       font-size: 1rem;
       color: #444;
     ">
       Dengan penuh suka cita, kami mengundang Anda untuk hadir dalam momen bahagia kami.
     </p>
-<!-- Akad Nikah -->
-<div style="margin-top: 40px;">
-<h2 style="
+
+    <!-- Akad Nikah -->
+    <div style="margin-top: 40px;">
+      <h2 style="
         font-family: 'Playfair Display', serif;
         font-size: 1.5rem;
         color: #aa4a44;
@@ -495,13 +514,14 @@ footer {
       ">
         Akad Nikah
       </h2>
-<p style="font-weight: 600;">Minggu, 20 Oktober 2025</p>
-<p>Pukul 08.00 WIB - Selesai</p>
-<p>Ds. Kanigoro, Kec. Kanigoro, Blitar</p>
-</div>
-<!-- Resepsi -->
-<div style="margin-top: 40px;">
-<h2 style="
+      <p style="font-weight: 600;">Minggu, 20 Oktober 2025</p>
+      <p>Pukul 08.00 WIB - Selesai</p>
+      <p>Ds. Kanigoro, Kec. Kanigoro, Blitar</p>
+    </div>
+
+    <!-- Resepsi -->
+    <div style="margin-top: 40px;">
+      <h2 style="
         font-family: 'Playfair Display', serif;
         font-size: 1.5rem;
         color: #aa4a44;
@@ -509,12 +529,13 @@ footer {
       ">
         Resepsi
       </h2>
-<p style="font-weight: 600;">Minggu, 20 Oktober 2025</p>
-<p>Pukul 11.00 WIB - Selesai</p>
-<p>Ds. Kanigoro, Kec. Kanigoro, Blitar</p>
+      <p style="font-weight: 600;">Minggu, 20 Oktober 2025</p>
+      <p>Pukul 11.00 WIB - Selesai</p>
+      <p>Ds. Kanigoro, Kec. Kanigoro, Blitar</p>
+    </div>
+  </div>
 </div>
-</div>
-</div>
+
 <!-- BAGIAN COUNTDOWN & MAPS DENGAN BACKGROUND SVG LANCIP -->
 <div class="zoom-in" style="
   position: relative;
@@ -522,39 +543,46 @@ footer {
   max-width: 700px;
   margin: 50px auto 0 auto;
 ">
-<!-- SVG bentuk lancip atas & bawah -->
-<svg preserveaspectratio="none" style="
+
+  <!-- SVG bentuk lancip atas & bawah -->
+  <svg viewBox="0 0 200 700" preserveAspectRatio="none" style="
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 0;
-  " viewbox="0 0 200 700">
-<path d="M100,0 L200,40 V660 L100,700 L0,660 V40 Z" fill="#7B9DBA"></path>
-</svg>
-<!-- Konten Countdown dan Maps -->
-<div style="
+  ">
+    <path d="M100,0 L200,40 V660 L100,700 L0,660 V40 Z" fill="#7B9DBA" />
+  </svg>
+
+  <!-- Konten Countdown dan Maps -->
+  <div style="
     position: relative;
     z-index: 1;
     padding: 60px 20px;
     text-align: center;
   ">
-<h3 style="font-family: 'Playfair Display', serif;">Menuju Hari Bahagia</h3>
-<div class="hexagon-container" data-aos="fade-up" data-aos-duration="1000" data-aos-once="false" id="countdown" style="margin-top: 20px;"></div>
-<!-- Lokasi Maps -->
-<div style="margin-top: 40px;">
-<h3 style="font-family: 'Playfair Display', serif;">Lokasi Acara</h3>
-<div style="
+    <h3 style="font-family: 'Playfair Display', serif;">Menuju Hari Bahagia</h3>
+    <div id="countdown" class="hexagon-container" style="margin-top: 20px;"></div>
+
+    <!-- Lokasi Maps -->
+    <div style="margin-top: 40px;">
+      <h3 style="font-family: 'Playfair Display', serif;">Lokasi Acara</h3>
+
+      <div style="
         margin-top: 15px;
         border-radius: 12px;
         overflow: hidden;
       ">
-<iframe allowfullscreen="" data-aos="fade-down" data-aos-duration="1000" data-aos-once="false" frameborder="0" height="250" loading="lazy" src="https://maps.google.com/maps?q=Ds.%20Kanigoro%20Blitar&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed" style="border:0;" width="100%">
-</iframe>
-</div>
-<div style="text-align: center; margin-top: 20px;">
-<a href="https://www.google.com/maps/place/Ds.+Kanigoro,+Blitar" style="
+        <iframe
+          src="https://maps.google.com/maps?q=Ds.%20Kanigoro%20Blitar&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          width="100%" height="250" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+
+      <div style="text-align: center; margin-top: 20px;">
+        <a href="https://www.google.com/maps/place/Ds.+Kanigoro,+Blitar" target="_blank" style="
           display: inline-block;
           background-color: #aa4a44;
           color: white;
@@ -564,84 +592,96 @@ footer {
           font-weight: bold;
           font-family: 'Poppins', sans-serif;
           transition: background-color 0.3s;
-        " target="_blank">
+        ">
           📍 Lihat Lokasi
         </a>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-</div>
+
 <!-- Kado Pernikahan -->
-<div class="kotak-luar" data-aos="fade-left" data-aos-duration="1000" data-aos-once="false">
-<!-- BUNGA ANIMASI - KANAN ATAS -->
-<img alt="bunga atas" class="bunga-animasi" src="bungakanan.webp" style="
+<div class="kotak-luar" data-aos="fade-up">
+
+  <!-- BUNGA ANIMASI - KANAN ATAS -->
+  <img src="bungakanan.webp" alt="bunga atas" class="bunga-animasi" style="
     position: absolute;
     top: 0;
     right: 0;
     width: 190px;
     animation: melayang 6s ease-in-out infinite;
     z-index: 0;
-  "/>
-<!-- BUNGA ANIMASI - KIRI BAWAH -->
-<img alt="bunga bawah" class="bunga-animasi" src="bungakanan.webp" style="
+  ">
+
+  <!-- BUNGA ANIMASI - KIRI BAWAH -->
+  <img src="bungakanan.webp" alt="bunga bawah" class="bunga-animasi" style="
     position: absolute;
     bottom: 0;
     left: 0;
     width: 190px;
     animation: melayang 8s ease-in-out infinite;
     z-index: 0;
-  "/>
-<div class="kotak-dalam">
-<h2 style="text-align: center; font-family: 'Playfair Display', serif;">Kado Pernikahan</h2>
-<p style="text-align: center;">Jika ingin memberikan hadiah digital, berikut rekening kami:</p>
-<div class="rekening-box">
-<p><strong>BCA - Raka Pratama</strong></p>
-<div style="
+  ">
+
+  <div class="kotak-dalam">
+    <h2 style="text-align: center; font-family: 'Playfair Display', serif;">Kado Pernikahan</h2>
+    <p style="text-align: center;">Jika ingin memberikan hadiah digital, berikut rekening kami:</p>
+
+    <div class="rekening-box">
+      <p><strong>BCA - Raka Pratama</strong></p>
+      <div style="
         display: flex;
         justify-content: space-between;
         align-items: center;
       ">
-<span id="rekening">1234567890</span>
-<button onclick="salinRekening()">Salin</button>
-</div>
-<p id="alertSalin" style="
+        <span id="rekening">1234567890</span>
+        <button onclick="salinRekening()">Salin</button>
+      </div>
+      <p id="alertSalin" style="
         display: none;
         color: green;
         font-size: 0.9rem;
       ">Disalin!</p>
+    </div>
+  </div>
 </div>
-</div>
-</div>
+
+
+
 <!-- Galeri Foto -->
-<div class="galeri" data-aos="fade-left" data-aos-duration="1000" data-aos-once="false">
-<h2>Galeri Kami</h2>
-<div class="foto-wrapper">
-<img alt="Galeri 1" data-aos="slide-left" data-aos-duration="1000" data-aos-once="false" src="pengantin1.webp"/>
-<img alt="Galeri 2" data-aos="flip-right" data-aos-duration="1000" data-aos-once="false" src="pengantin2.webp"/>
-<img alt="Galeri 3" data-aos="fade-left" data-aos-duration="1000" data-aos-once="false" src="foto3.webp"/>
-<img alt="Galeri 4" data-aos="fade-left" data-aos-duration="1000" data-aos-once="false" src="foto4.webp"/>
-<img alt="Galeri 5" data-aos="slide-down" data-aos-duration="1000" data-aos-once="false" src="foto5.webp"/>
-<img alt="Galeri 6" data-aos="zoom-out" data-aos-duration="1000" data-aos-once="false" src="foto6.webp"/>
+<div class="galeri" data-aos="fade-up">
+  <h2>Galeri Kami</h2>
+  <div class="foto-wrapper">
+    <img src="pengantin1.webp" alt="Galeri 1">
+    <img src="pengantin2.webp" alt="Galeri 2">
+    <img src="foto3.webp" alt="Galeri 3">
+    <img src="foto4.webp" alt="Galeri 4">
+    <img src="foto5.webp" alt="Galeri 5">
+    <img src="foto6.webp" alt="Galeri 6">
+  </div>
 </div>
-</div>
-<!-- Penutup -->
-<!-- Bagian awal dengan background khusus -->
-<div class="background-bagian-khusus-penutup">
-<div class="penutup" data-aos="fade-right">
-<h2>Terima Kasih</h2>
-<p>
+
+
+  <!-- Penutup -->
+  <!-- Bagian awal dengan background khusus -->
+  <div class="background-bagian-khusus-penutup">
+  <div class="penutup" data-aos="fade-up">
+    <h2>Terima Kasih</h2>
+    <p>
       Kehadiran dan doa restu Anda sangat berarti bagi kami.
       Wassalamu’alaikum Warahmatullahi Wabarakatuh.
     </p>
-</div>
-<!-- Footer -->
-<footer>
-<p>© 2025 Undangan ini dibuat oleh <strong>Ruang Digital</strong></p>
-</footer>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Undangan ini dibuat oleh <strong>Ruang Digital</strong></p>
+  </footer>
+
 <!-- Script AOS & Countdown -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-  AOS.init({ duration: 1000, once: false });
+  AOS.init({ duration: 1000 });
 
   function salinRekening() {
     navigator.clipboard.writeText(document.getElementById("rekening").innerText);
@@ -697,5 +737,6 @@ footer {
     animateOnScroll(); // Trigger pertama saat load
   });
 </script>
-</div></body>
-</html>
+
+</body>
+     </html>
