@@ -745,23 +745,32 @@ footer {
   // 🎵 Musik autoplay dan kontrol
   const music = document.getElementById("bg-music");
 
+  // Saat halaman selesai dimuat, cek apakah boleh autoplay
   window.addEventListener("DOMContentLoaded", () => {
-    music.play().catch(() => {
-      setTimeout(() => music.play().catch(() => {}), 500);
-    });
+    if (localStorage.getItem("undangan_autoplay") === "true") {
+      music.play().catch(() => {
+        setTimeout(() => music.play().catch(() => {}), 500); // fallback
+      });
+    }
   });
 
+  // Musik berhenti kalau keluar tab
   document.addEventListener("visibilitychange", () => {
     if (document.hidden) {
       music.pause();
     } else {
-      music.play().catch(() => {});
+      if (localStorage.getItem("undangan_autoplay") === "true") {
+        music.play().catch(() => {});
+      }
     }
   });
 
+  // Tambahan: saat halaman dibuka ulang (pageshow) atau ditutup (pagehide)
   window.addEventListener("pagehide", () => music.pause());
   window.addEventListener("pageshow", () => {
-    if (!document.hidden) music.play().catch(() => {});
+    if (localStorage.getItem("undangan_autoplay") === "true") {
+      music.play().catch(() => {});
+    }
   });
 </script>
 
