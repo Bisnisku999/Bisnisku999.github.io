@@ -183,6 +183,42 @@
 .font-playfair {
     font-family: 'Playfair Display', serif;
 }
+  .hexagon-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  .countbox {
+    position: relative;
+    width: 100px;
+    height: 55px;
+    background: #fff;
+    color: #aa4a44;
+    text-align: center;
+    line-height: 55px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    clip-path: polygon(
+      50% 0%,
+      93% 25%,
+      93% 75%,
+      50% 100%,
+      7% 75%,
+      7% 25%
+    );
+  }
+  .countbox span {
+    display: block;
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+  .countbox div {
+    font-size: 0.8rem;
+    line-height: 1.2;
+  }
   </style>
 </head>
 <body>
@@ -271,10 +307,11 @@
       </div>
 
       <!-- Countdown -->
-      <div style="margin-top: 50px;">
-        <h3 style="font-family: 'Playfair Display', serif;">Menuju Hari Bahagia</h3>
-        <div id="countdown" style="display:flex; justify-content:center; gap:20px; font-weight: bold; font-size: 1.2rem;"></div>
-      </div>
+<div style="margin-top: 50px;">
+  <h3 style="font-family: 'Playfair Display', serif;">Menuju Hari Bahagia</h3>
+  <div id="countdown" class="hexagon-container"></div>
+</div>
+
 
       <!-- Lokasi Maps -->
       <div style="margin-top: 40px;">
@@ -345,24 +382,24 @@
       setTimeout(() => alert.style.display = "none", 2000);
     }
 
-    const targetDate = new Date(2025, 9, 20, 10, 0, 0);
-    function updateCountdown() {
-      const now = new Date();
-      const diff = targetDate - now;
-      if (diff <= 0) return;
-      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const m = Math.floor((diff / (1000 * 60)) % 60);
-      const s = Math.floor((diff / 1000) % 60);
-      document.getElementById("countdown").innerHTML = `
-        <div class="countbox"><span>${d}</span><div>Hari</div></div>
-        <div class="countbox"><span>${h}</span><div>Jam</div></div>
-        <div class="countbox"><span>${m}</span><div>Menit</div></div>
-        <div class="countbox"><span>${s}</span><div>Detik</div></div>
-      `;
-    }
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
+    const targetDate = new Date(2025, 9, 20, 10, 0, 0); // 20 Oktober 2025, pukul 10:00
+function updateCountdown() {
+  const now = new Date();
+  const diff = targetDate - now;
+  if (diff <= 0) return;
+  const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const m = Math.floor((diff / (1000 * 60)) % 60);
+  const s = Math.floor((diff / 1000) % 60);
+  document.getElementById("countdown").innerHTML = `
+    <div class="countbox"><span>${d}</span><div>Hari</div></div>
+    <div class="countbox"><span>${h}</span><div>Jam</div></div>
+    <div class="countbox"><span>${m}</span><div>Menit</div></div>
+    <div class="countbox"><span>${s}</span><div>Detik</div></div>
+  `;
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
   </script>
 </body>
   </html>
