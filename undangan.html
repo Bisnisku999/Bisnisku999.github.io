@@ -15,6 +15,9 @@
 * {
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
@@ -23,6 +26,16 @@ body {
   color: #333;
   text-align: center;
   min-height: 100vh;
+  overflow-x: hidden;
+}
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+section.reveal {
+  opacity: 1;
+  transform: translateY(0);
 }
 h1, h2, h3, h4 {
   margin: 0 0 20px;
@@ -696,6 +709,27 @@ footer {
     window.addEventListener('scroll', animateOnScroll);
     animateOnScroll(); // Trigger pertama saat load
   });
+   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: false,
+    mirror: true // efek animasi tetap saat scroll naik
+  });
+
+  // Scroll animation for section fade-in
+  function revealSections() {
+    const reveals = document.querySelectorAll('section');
+    const windowHeight = window.innerHeight;
+    reveals.forEach(sec => {
+      const top = sec.getBoundingClientRect().top;
+      if (top < windowHeight - 100) {
+        sec.classList.add('reveal');
+      }
+    });
+  }
+  window.addEventListener('scroll', revealSections);
+  window.addEventListener('load', revealSections);
 </script>
 </div></body>
 </html>
