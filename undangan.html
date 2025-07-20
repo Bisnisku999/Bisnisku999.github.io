@@ -683,22 +683,34 @@ footer {
     <p>&copy; 2025 Undangan ini dibuat oleh <strong>Ruang Digital</strong></p>
   </footer>
 
-<!-- Script AOS & Countdown -->
+<!-- Script Music & AOS & Countdown -->
     
+    <script>
     const music = document.getElementById("bg-music");
 
-    // Pause kalau user keluar dari halaman
-    document.addEventListener("visibilitychange", function () {
+    // Saat halaman dimuat, coba play
+    window.addEventListener("DOMContentLoaded", () => {
+      music.play().catch(() => {
+        // Beberapa browser butuh delay kecil
+        setTimeout(() => music.play().catch(() => {}), 500);
+      });
+    });
+
+    // Pause musik jika keluar tab
+    document.addEventListener("visibilitychange", () => {
       if (document.hidden) {
         music.pause();
       } else {
         music.play().catch(() => {});
       }
     });
-    
+
+    // Tambahan untuk jaga-jaga saat keluar browser
     window.addEventListener("pagehide", () => music.pause());
     window.addEventListener("pageshow", () => {
-      if (!document.hidden) music.play().catch(() => {});
+      if (!document.hidden) {
+        music.play().catch(() => {});
+      }
     });
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
