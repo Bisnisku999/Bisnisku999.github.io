@@ -746,23 +746,23 @@ footer {
     const music = document.getElementById("bg-music");
   let sudahPlay = false;
 
-  // Fungsi untuk coba play musik
-  function playMusikJikaBelum() {
+  function cobaPlayMusik() {
     if (!sudahPlay) {
       music.play().then(() => {
         sudahPlay = true;
-      }).catch(() => {
-        // masih gagal? biarkan sampai user scroll lagi
+        console.log("Musik berhasil diputar");
+      }).catch((e) => {
+        console.log("Gagal play musik:", e);
       });
     }
   }
 
-  // Coba play saat scroll pertama
-  window.addEventListener("scroll", () => {
-    playMusikJikaBelum();
-  });
+  // ✅ Trigger saat scroll, klik, atau sentuh
+  window.addEventListener("scroll", cobaPlayMusik);
+  window.addEventListener("click", cobaPlayMusik);
+  window.addEventListener("touchstart", cobaPlayMusik);
 
-  // Auto resume jika kembali ke tab
+  // 🔁 Resume otomatis kalau kembali ke tab
   document.addEventListener("visibilitychange", () => {
     if (!document.hidden && sudahPlay) {
       music.play().catch(() => {});
@@ -771,10 +771,10 @@ footer {
     }
   });
 
-  // Tambahan untuk browser edge case
   window.addEventListener("pageshow", () => {
     if (sudahPlay) music.play().catch(() => {});
   });
+
   window.addEventListener("pagehide", () => music.pause());
 </script>
 
