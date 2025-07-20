@@ -743,35 +743,39 @@ footer {
   });
 
   // 🎵 Musik autoplay dan kontrol
-  const music = document.getElementById("bg-music");
+    const music = document.getElementById("bg-music");
+  let sudahPlay = false;
 
-  // Saat halaman selesai dimuat, cek apakah boleh autoplay
-  window.addEventListener("DOMContentLoaded", () => {
-    if (localStorage.getItem("undangan_autoplay") === "true") {
-      music.play().catch(() => {
-        setTimeout(() => music.play().catch(() => {}), 500); // fallback
+  // Fungsi untuk coba play musik
+  function playMusikJikaBelum() {
+    if (!sudahPlay) {
+      music.play().then(() => {
+        sudahPlay = true;
+      }).catch(() => {
+        // masih gagal? biarkan sampai user scroll lagi
       });
     }
+  }
+
+  // Coba play saat scroll pertama
+  window.addEventListener("scroll", () => {
+    playMusikJikaBelum();
   });
 
-  // Musik berhenti kalau keluar tab
+  // Auto resume jika kembali ke tab
   document.addEventListener("visibilitychange", () => {
-    if (document.hidden) {
-      music.pause();
+    if (!document.hidden && sudahPlay) {
+      music.play().catch(() => {});
     } else {
-      if (localStorage.getItem("undangan_autoplay") === "true") {
-        music.play().catch(() => {});
-      }
+      music.pause();
     }
   });
 
-  // Tambahan: saat halaman dibuka ulang (pageshow) atau ditutup (pagehide)
-  window.addEventListener("pagehide", () => music.pause());
+  // Tambahan untuk browser edge case
   window.addEventListener("pageshow", () => {
-    if (localStorage.getItem("undangan_autoplay") === "true") {
-      music.play().catch(() => {});
-    }
+    if (sudahPlay) music.play().catch(() => {});
   });
+  window.addEventListener("pagehide", () => music.pause());
 </script>
 
 
