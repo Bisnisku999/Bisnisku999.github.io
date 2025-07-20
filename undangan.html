@@ -744,49 +744,46 @@ footer {
 
   // 🎵 Musik autoplay dan kontrol
     const music = document.getElementById("bg-music");
+    let sudahPlay = false;
 
-  // Flag untuk tahu apakah musik sudah pernah diputar
-  let sudahPlay = false;
-
-  // Fungsi untuk play musik
-  function playMusik() {
-    if (!sudahPlay) {
-      music.play().then(() => {
-        sudahPlay = true;
-      }).catch((err) => {
-        // Jika gagal, kita tunggu user interaksi
-        console.warn("Musik tidak bisa diputar otomatis:", err);
-      });
+    // Fungsi coba play
+    function cobaPlayMusik() {
+      if (!sudahPlay) {
+        music.play().then(() => {
+          sudahPlay = true;
+        }).catch((e) => {
+          console.warn("Gagal autoplay:", e);
+        });
+      }
     }
-  }
 
-  // Saat halaman dibuka
-  window.addEventListener("DOMContentLoaded", () => {
-    if (localStorage.getItem("undangan_autoplay") === "true") {
-      playMusik();
-    }
-  });
+    // Saat halaman selesai dimuat
+    window.addEventListener("DOMContentLoaded", () => {
+      if (localStorage.getItem("undangan_autoplay") === "true") {
+        cobaPlayMusik();
+      }
+    });
 
-  // Jika user kembali ke halaman dari tab lain
-  document.addEventListener("visibilitychange", () => {
-    if (!document.hidden && localStorage.getItem("undangan_autoplay") === "true") {
-      music.play().catch(() => {});
-    } else {
+    // Auto play jika kembali dari tab lain
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden && localStorage.getItem("undangan_autoplay") === "true") {
+        music.play().catch(() => {});
+      } else {
+        music.pause();
+      }
+    });
+
+    // Auto resume jika kembali dari cache
+    window.addEventListener("pageshow", () => {
+      if (localStorage.getItem("undangan_autoplay") === "true") {
+        music.play().catch(() => {});
+      }
+    });
+
+    // Pause saat keluar
+    window.addEventListener("pagehide", () => {
       music.pause();
-    }
-  });
-
-  // Jika kembali dari page cache (browser Android iOS)
-  window.addEventListener("pageshow", () => {
-    if (localStorage.getItem("undangan_autoplay") === "true") {
-      music.play().catch(() => {});
-    }
-  });
-
-  // Jika keluar dari halaman
-  window.addEventListener("pagehide", () => {
-    music.pause();
-  });
+    });
 </script>
 
 
