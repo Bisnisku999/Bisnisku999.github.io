@@ -79,10 +79,13 @@
 
   <!-- ✅ Script simpan izin autoplay -->
   <script>
-    document.querySelector('.btn-open').addEventListener('click', function () {
-      // Simpan flag autoplay agar halaman berikutnya bisa nyalakan musik
-      localStorage.setItem('undangan_autoplay', 'true');
-    });
+    <a href="undangan.html" class="btn-open">Buka Undangan</a>
+
+<script>
+  document.querySelector('.btn-open').addEventListener('click', function () {
+    // Simpan izin agar musik boleh auto play
+    localStorage.setItem('undangan_autoplay', 'true');
+  });
   </script>
 </body>
 </html>
