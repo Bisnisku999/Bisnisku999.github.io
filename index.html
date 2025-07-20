@@ -69,14 +69,18 @@
   <div class="overlay">
     <h1>The Wedding of</h1>
     <h2 style="font-family: 'Great Vibes', cursive; font-size: 2.5rem;">
-  Raka <span style="margin: 0 20px;">&</span> Dinda
-</h2>
+      Raka <span style="margin: 0 20px;">&</span> Dinda
+    </h2>
     <h3>Yth. Bapak/Ibu/Saudara/i</h3>
+
+    <!-- 🔘 Tombol Buka Undangan -->
     <a href="undangan.html" class="btn-open">Buka Undangan</a>
   </div>
+
+  <!-- ✅ Script simpan izin autoplay -->
   <script>
-    // Simpan izin autoplay saat tombol diklik
     document.querySelector('.btn-open').addEventListener('click', function () {
+      // Simpan flag autoplay agar halaman berikutnya bisa nyalakan musik
       localStorage.setItem('undangan_autoplay', 'true');
     });
   </script>
