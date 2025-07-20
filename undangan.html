@@ -232,6 +232,18 @@ body::before {
     font-family: 'Allura', cursive;
     margin: 0 10px;
   }
+    .bunga-animasi {
+    position: absolute;
+    width: 60px;
+    opacity: 0.7;
+    animation: melayang 6s ease-in-out infinite;
+    z-index: 0;
+  }
+  @keyframes melayang {
+    0% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
+    50% { transform: translateY(-15px) rotate(10deg); opacity: 1; }
+    100% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
+      }
   </style>
 </head>
 <body>
@@ -289,8 +301,15 @@ body::before {
   </div>
 </section>
 
-  <!-- Awal bagian isi undangan dengan 2 layer background -->
-<section id="isi-undangan" style="background-color: #C9D6DF; padding: 60px 20px; display: flex; justify-content: center;">
+  <!-- Isi Undangan dengan Background Biru + Bunga Animasi -->
+<section id="isi-undangan" style="position: relative; background-color: #c9d6df; overflow: hidden; padding: 60px 20px; display: flex; justify-content: center;">
+  
+  <!-- Bunga animasi (kanan atas) -->
+  <img src="bungakanan.webp" alt="bunga" class="bunga-animasi" style="top: 10px; right: 10px; animation-delay: 0s;">
+  
+  <!-- Bunga animasi (kiri bawah) -->
+  <img src="bunga2.webp" alt="bunga" class="bunga-animasi" style="bottom: 10px; left: 10px; animation-delay: 2s;">
+
   <div style="
     background-image: url('Backgroundkado.webp');
     background-size: cover;
@@ -301,6 +320,8 @@ body::before {
     padding: 40px 20px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     text-align: center;
+    position: relative;
+    z-index: 1;
   ">
     <p class="text-isi" data-aos="fade-up" style="font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #333;">
       “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri...”
