@@ -78,60 +78,21 @@
       display: block;
     }
     .galeri {
-  padding: 50px 30px;
-  background-color: #fefefe;
-}
-.foto-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-.foto-wrapper .foto {
-  border-radius: 50% / 30%;
-  object-fit: cover;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  opacity: 0;
-  transform: translateX(100px);
-  animation: slide-in 1s forwards;
-}
-/* Ukuran foto variatif */
-.ukuran-sm {
-  width: 110px;
-  height: 150px;
-}
-.ukuran-md {
-  width: 140px;
-  height: 180px;
-}
-.ukuran-lg {
-  width: 170px;
-  height: 210px;
-}
-/* Animasi dari kiri dan kanan */
-.foto-kiri {
-  animation-name: slide-in-kiri;
-}
-.foto-kanan {
-  animation-name: slide-in-kanan;
-}
-@keyframes slide-in-kiri {
-  from {
-    transform: translateX(-100px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-@keyframes slide-in-kanan {
-  from {
-    transform: translateX(100px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
+      padding: 50px 30px;
+      background-color: #fefefe;
+    }
+    .foto-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .foto-wrapper img {
+      width: 140px;
+      height: 180px;
+      border-radius: 50% / 30%;
+      object-fit: cover;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
     }
     .event-card {
       background: #fff;
@@ -670,19 +631,19 @@
 </div>
 
 
-<!-- Galeri Foto -->
-<div class="galeri" data-aos="fade-up">
-  <h2 style="text-align: center; font-family: 'Playfair Display', serif;">Galeri Kami</h2>
-  <div class="foto-wrapper">
-    <img src="pengantin1.webp" alt="Galeri 1" class="foto foto-kiri ukuran-lg">
-    <img src="pengantin2.webp" alt="Galeri 2" class="foto foto-kanan ukuran-md">
-    <img src="foto3.webp" alt="Galeri 3" class="foto foto-kiri ukuran-sm">
-    <img src="foto4.webp" alt="Galeri 4" class="foto foto-kanan ukuran-lg">
-    <img src="foto5.webp" alt="Galeri 5" class="foto foto-kiri ukuran-md">
-    <img src="foto6.webp" alt="Galeri 6" class="foto foto-kanan ukuran-sm">
-  </div>
-</div>
 
+  <!-- Galeri Foto -->
+  <div class="galeri" data-aos="fade-up">
+    <h2>Galeri Kami</h2>
+    <div class="foto-wrapper">
+      <img src="pengantin1.webp" alt="Galeri 1">
+      <img src="pengantin2.webp" alt="Galeri 2">
+      <img src="foto3.webp" alt="Galeri 3">
+      <img src="foto4.webp" alt="Galeri 4">
+      <img src="foto5.webp" alt="Galeri 5">
+      <img src="foto6.webp" alt="Galeri 6">
+    </div>
+  </div>
 
   <!-- Penutup -->
   <!-- Bagian awal dengan background khusus -->
