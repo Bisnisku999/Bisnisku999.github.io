@@ -338,6 +338,11 @@ footer {
   </style>
 </head>
 <body>
+  <!-- Bagian audio -->
+    <audio id="bg-music" autoplay loop>
+    <source src="lagu.mp3" type="audio/mpeg">
+  </audio>
+
   <!-- Bagian awal fullscreen -->
 <section class="background-bagian-khusus hero-section" style="
   display: flex;
@@ -679,6 +684,22 @@ footer {
   </footer>
 
 <!-- Script AOS & Countdown -->
+    
+    const music = document.getElementById("bg-music");
+
+    // Pause kalau user keluar dari halaman
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) {
+        music.pause();
+      } else {
+        music.play().catch(() => {});
+      }
+    });
+    
+    window.addEventListener("pagehide", () => music.pause());
+    window.addEventListener("pageshow", () => {
+      if (!document.hidden) music.play().catch(() => {});
+    });
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init({ duration: 1000 });
