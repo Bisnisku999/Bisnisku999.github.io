@@ -234,18 +234,55 @@
 </head>
 <body>
   <!-- Bagian awal fullscreen -->
-<section class="background-bagian-khusus hero-section">
-  <h1 class="judul">The Wedding of</h1>
+<section class="background-bagian-khusus hero-section" style="
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  text-align: center;
+">
 
-  <div class="foto-pengantin" data-aos="fade-up">
-    <img src="backround_compressed.webp" alt="Foto Pengantin">
+  <h1 class="judul" style="
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+  ">
+    The Wedding of
+  </h1>
+
+  <!-- Foto pengantin -->
+  <div class="foto-pengantin" data-aos="fade-up" style="
+    width: 260px;
+    height: 340px;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    margin-bottom: 30px;
+  ">
+    <img src="backround_compressed.webp" alt="Foto Pengantin" style="width: 100%; height: 100%; object-fit: cover;">
   </div>
 
-  <!-- Nama pengantin dengan font Allura -->
-  <h2 class="nama-pengantin" data-aos="fade-up">Raka <span>&</span> Dinda</h2>
+  <!-- Nama Pengantin -->
+  <h2 class="nama-pengantin" data-aos="fade-up" style="
+    font-family: 'Allura', cursive;
+    font-size: 2.5rem;
+    color: #8A4A44;
+    font-weight: 400;
+  ">
+    Raka <span style="color: #444;">&</span> Dinda
+  </h2>
 
   <!-- Tombol Scroll Down -->
-  <div class="scroll-down" onclick="document.getElementById('isi-undangan').scrollIntoView({ behavior: 'smooth' });">
+  <div class="scroll-down" onclick="document.getElementById('isi-undangan').scrollIntoView({ behavior: 'smooth' });" style="
+    font-size: 2rem;
+    margin-top: 30px;
+    cursor: pointer;
+    animation: bounce 2s infinite;
+  ">
     ⌄
   </div>
 </section>
