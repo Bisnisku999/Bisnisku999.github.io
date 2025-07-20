@@ -449,23 +449,42 @@ body::before {
 </div>
 
 
-
 <!-- Kado Pernikahan -->
-<div style="background-color: #C9D6DF; padding: 40px 20px; border-radius: 24px;" data-aos="fade-up">
-  <div style="background: url('Backgroundkado.webp') no-repeat center center / cover; padding: 40px 20px; border-radius: 20px; max-width: 600px; margin: auto;">
-    <h2 style="text-align: center; font-family: 'Playfair Display', serif;">Kado Pernikahan</h2>
-    <p style="text-align: center;">Jika ingin memberikan hadiah digital, berikut rekening kami:</p>
-    
-    <div style="background: #fff; padding: 20px; border-radius: 12px; max-width: 400px; margin: auto; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-      <p><strong>BCA - Raka Pratama</strong></p>
-      <div style="display:flex; justify-content:space-between;">
-        <span id="rekening">1234567890</span>
-        <button onclick="salinRekening()">Salin</button>
-      </div>
-      <p id="alertSalin" style="display:none; color:green; font-size:0.9rem;">Disalin!</p>
+<div style="position: relative; background-color: #CAD9E6; padding: 60px 20px;">
+
+  <!-- Bunga pojok kanan atas -->
+  <img src="bungakanan1.webp" alt="bunga" class="bunga-animasi" style="
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 250px;
+    pointer-events: none;
+    animation-delay: 0s;
+  ">
+
+  <!-- Bunga pojok kiri bawah -->
+  <img src="bunga2.webp" alt="bunga" class="bunga-animasi" style="
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 250px;
+    pointer-events: none;
+    animation-delay: 2s;
+  ">
+
+  <!-- Konten -->
+  <h2>Kado Pernikahan</h2>
+  <p>Jika ingin memberikan hadiah digital, berikut rekening kami:</p>
+  <div style="background:#fff; padding:20px; border-radius:12px; max-width:400px; margin:auto;">
+    <p><strong>BCA - Raka Pratama</strong></p>
+    <div style="display:flex; justify-content:space-between;">
+      <span id="rekening">1234567890</span>
+      <button onclick="salinRekening()">Salin</button>
     </div>
+    <p id="alertSalin" style="display:none; color:green; font-size:0.9rem;">Disalin!</p>
   </div>
 </div>
+
 
 
   </div>
