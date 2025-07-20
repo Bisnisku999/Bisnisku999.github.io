@@ -318,6 +318,60 @@
     max-width: 400px;
     margin: auto;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      .galeri {
+    text-align: center;
+    padding: 50px 20px;
+  }
+  .galeri h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #aa4a44;
+  }
+  .foto-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .foto-wrapper img {
+    object-fit: cover;
+    border-radius: 12px;
+    opacity: 0;
+    transform: translateX(0);
+    transition: all 0.8s ease;
+  }
+  /* Ukuran acak untuk variasi */
+  .foto-wrapper img:nth-child(3n) {
+    width: 180px;
+    height: 240px;
+  }
+  .foto-wrapper img:nth-child(3n+1) {
+    width: 240px;
+    height: 180px;
+  }
+  .foto-wrapper img:nth-child(3n+2) {
+    width: 200px;
+    height: 200px;
+  }
+  /* Animasi masuk dari kanan & kiri */
+  .foto-wrapper img.show-left {
+    opacity: 1;
+    transform: translateX(0);
+    animation: masukKiri 0.8s forwards;
+  }
+  .foto-wrapper img.show-right {
+    opacity: 1;
+    transform: translateX(0);
+    animation: masukKanan 0.8s forwards;
+  }
+  @keyframes masukKiri {
+    from { transform: translateX(-80px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+  @keyframes masukKanan {
+    from { transform: translateX(80px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
   }
   </style>
 </head>
@@ -632,18 +686,19 @@
 
 
 
-  <!-- Galeri Foto -->
-  <div class="galeri" data-aos="fade-up">
-    <h2>Galeri Kami</h2>
-    <div class="foto-wrapper">
-      <img src="pengantin1.webp" alt="Galeri 1">
-      <img src="pengantin2.webp" alt="Galeri 2">
-      <img src="foto3.webp" alt="Galeri 3">
-      <img src="foto4.webp" alt="Galeri 4">
-      <img src="foto5.webp" alt="Galeri 5">
-      <img src="foto6.webp" alt="Galeri 6">
-    </div>
+<!-- Galeri Foto -->
+<div class="galeri" data-aos="fade-up">
+  <h2>Galeri Kami</h2>
+  <div class="foto-wrapper">
+    <img src="pengantin1.webp" alt="Galeri 1">
+    <img src="pengantin2.webp" alt="Galeri 2">
+    <img src="foto3.webp" alt="Galeri 3">
+    <img src="foto4.webp" alt="Galeri 4">
+    <img src="foto5.webp" alt="Galeri 5">
+    <img src="foto6.webp" alt="Galeri 6">
   </div>
+</div>
+
 
   <!-- Penutup -->
   <!-- Bagian awal dengan background khusus -->
@@ -691,6 +746,28 @@ function updateCountdown() {
 }
 updateCountdown();
 setInterval(updateCountdown, 1000);
+    
+  const galeriImages = document.querySelectorAll('.foto-wrapper img');
+
+  function checkPosition() {
+    const triggerBottom = window.innerHeight * 0.9;
+
+    galeriImages.forEach((img, index) => {
+      const imgTop = img.getBoundingClientRect().top;
+
+      if (imgTop < triggerBottom) {
+        if (index % 2 === 0) {
+          img.classList.add('show-left');
+        } else {
+          img.classList.add('show-right');
+        }
+      }
+    });
+  }
+
+  window.addEventListener('scroll', checkPosition);
+  window.addEventListener('load', checkPosition);
+
   </script>
 </body>
   </html>
