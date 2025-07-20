@@ -340,28 +340,8 @@ footer {
 <body>
   <!-- Bagian audio -->
     <audio id="bg-music" loop>
-  <source src="lagu.mp3" type="audio/mpeg">
-</audio>
-
-<!-- Overlay interaksi (klik saja) -->
-<div id="music-touch-overlay" style="
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background: rgba(255,255,255,0.6);
-  backdrop-filter: blur(4px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-family: sans-serif;
-  padding: 20px;
-">
-  <div>
-    <p style="margin-bottom: 10px;">🎵 Sentuh layar untuk mulai musik</p>
-    <button id="start-music-btn" style="padding: 12px 20px;">Mulai</button>
-  </div>
-</div>
+  <source src="lagu.mp3" type="audio/mpeg" />
+    </audio>
 
   <!-- Bagian awal fullscreen -->
 <section class="background-bagian-khusus hero-section" style="
@@ -764,23 +744,25 @@ footer {
 
   // 🎵 Musik autoplay dan kontrol
     const music = document.getElementById("bg-music");
-  const overlay = document.getElementById("music-touch-overlay");
-  const btnStart = document.getElementById("start-music-btn");
-
   let sudahPlay = false;
 
-  function mulaiMusik() {
-    music.play().then(() => {
-      sudahPlay = true;
-      overlay.style.display = "none";
-    }).catch((e) => {
-      console.log("Masih gagal putar musik:", e);
-    });
+  function cobaPlayMusik() {
+    if (!sudahPlay) {
+      music.play().then(() => {
+        sudahPlay = true;
+        console.log("Musik berhasil diputar");
+      }).catch((e) => {
+        console.log("Gagal play musik:", e);
+      });
+    }
   }
 
-  btnStart.addEventListener("click", mulaiMusik);
+  // ✅ Trigger saat scroll, klik, atau sentuh
+  window.addEventListener("scroll", cobaPlayMusik);
+  window.addEventListener("click", cobaPlayMusik);
+  window.addEventListener("touchstart", cobaPlayMusik);
 
-  // Auto resume jika kembali ke tab
+  // 🔁 Resume otomatis kalau kembali ke tab
   document.addEventListener("visibilitychange", () => {
     if (!document.hidden && sudahPlay) {
       music.play().catch(() => {});
@@ -789,12 +771,13 @@ footer {
     }
   });
 
-  window.addEventListener("pagehide", () => music.pause());
   window.addEventListener("pageshow", () => {
     if (sudahPlay) music.play().catch(() => {});
   });
+
+  window.addEventListener("pagehide", () => music.pause());
 </script>
 
 
 </body>
-   </html>
+  </html>
